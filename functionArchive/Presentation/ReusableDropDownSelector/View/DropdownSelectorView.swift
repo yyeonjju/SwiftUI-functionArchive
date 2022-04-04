@@ -11,8 +11,10 @@ import SwiftUI
 
 
 struct DropdownSelectorView: View {
-    @State private var shouldShowDropdown = false //드롭다운 여부
-    @State private var selectedOption: DropdownOption? = nil //선택된 옵션
+//    @State private var shouldShowDropdown = false //드롭다운 여부
+//    @State private var selectedOption: DropdownOption? = nil //선택된 옵션
+    @Binding var shouldShowDropdown :Bool //드롭다운 여부
+    @Binding var selectedOption: DropdownOption? //선택된 옵션
     var placeholder: String //플레이스홀더
     var options: [DropdownOption] //옵션들
     var onOptionSelected: ((_ option: DropdownOption) -> Void)? //옵션 선택됐을 떄 실행되는 이벤트 함수
@@ -26,7 +28,7 @@ struct DropdownSelectorView: View {
         }) {
             HStack {
                 //⭐️ 선택된 옵션이 없으면 플레이스홀더 선택한 값이 있으면 그 옵션 인스턴스의 value 값으로 세팅
-                Text(selectedOption == nil ? placeholder : selectedOption!.value)
+                Text(selectedOption == nil ? placeholder : selectedOption!.label)
                     .font(.system(size: 14))
                     .foregroundColor(selectedOption == nil ? Color.gray: Color.black)
                 Spacer()
@@ -67,31 +69,31 @@ struct DropdownSelectorView: View {
     }
 }
 
-struct DropdownSelectorView_Previews: PreviewProvider {
-    static var uniqueKey: String {
-            UUID().uuidString
-        }
-
-        static let options: [DropdownOption] = [
-            DropdownOption(key: uniqueKey, value: "Sunday"),
-            DropdownOption(key: uniqueKey, value: "Monday"),
-            DropdownOption(key: uniqueKey, value: "Tuesday"),
-            DropdownOption(key: uniqueKey, value: "Wednesday"),
-            DropdownOption(key: uniqueKey, value: "Thursday"),
-            DropdownOption(key: uniqueKey, value: "Friday"),
-            DropdownOption(key: uniqueKey, value: "Saturday")
-        ]
-
-
-        static var previews: some View {
-            Group {
-                DropdownSelectorView(
-                    placeholder: "Day of the week",
-                    options: options,
-                    onOptionSelected: { option in
-                        print(option)
-                })
-                .padding(.horizontal)
-            }
-        }
-}
+//struct DropdownSelectorView_Previews: PreviewProvider {
+//    static var uniqueKey: String {
+//            UUID().uuidString
+//        }
+//
+//        static let options: [DropdownOption] = [
+//            DropdownOption(key: uniqueKey, value: "Sunday"),
+//            DropdownOption(key: uniqueKey, value: "Monday"),
+//            DropdownOption(key: uniqueKey, value: "Tuesday"),
+//            DropdownOption(key: uniqueKey, value: "Wednesday"),
+//            DropdownOption(key: uniqueKey, value: "Thursday"),
+//            DropdownOption(key: uniqueKey, value: "Friday"),
+//            DropdownOption(key: uniqueKey, value: "Saturday")
+//        ]
+//
+//
+//        static var previews: some View {
+//            Group {
+//                DropdownSelectorView(
+//                    placeholder: "Day of the week",
+//                    options: options,
+//                    onOptionSelected: { option in
+//                        print(option)
+//                })
+//                .padding(.horizontal)
+//            }
+//        }
+//}
