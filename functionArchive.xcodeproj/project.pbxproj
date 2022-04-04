@@ -11,6 +11,14 @@
 		7D4CB1DF27F67E7A00A03269 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4CB1DE27F67E7A00A03269 /* ContentView.swift */; };
 		7D4CB1E127F67E7C00A03269 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D4CB1E027F67E7C00A03269 /* Assets.xcassets */; };
 		7D4CB1E427F67E7C00A03269 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D4CB1E327F67E7C00A03269 /* Preview Assets.xcassets */; };
+		7D4CB1EC27F67F8900A03269 /* Landing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4CB1EB27F67F8900A03269 /* Landing.swift */; };
+		7D4CB1F127F6851900A03269 /* selectResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4CB1F027F6851900A03269 /* selectResultView.swift */; };
+		7D4CB1F327F68C2500A03269 /* FilterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4CB1F227F68C2500A03269 /* FilterViewModel.swift */; };
+		7D6A0EC027F9C30800F3E87E /* DropdownSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D6A0EBF27F9C30800F3E87E /* DropdownSelectorView.swift */; };
+		7D6A0EC227F9DAAD00F3E87E /* DropdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D6A0EC127F9DAAD00F3E87E /* DropdownView.swift */; };
+		7D6A0EC427F9DF9E00F3E87E /* DropdownRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D6A0EC327F9DF9E00F3E87E /* DropdownRowView.swift */; };
+		7D6A0EC627F9E35700F3E87E /* DropdownSelectorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D6A0EC527F9E35700F3E87E /* DropdownSelectorViewModel.swift */; };
+		7D6A0EC827F9E55100F3E87E /* SelectorsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D6A0EC727F9E55100F3E87E /* SelectorsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +27,14 @@
 		7D4CB1DE27F67E7A00A03269 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		7D4CB1E027F67E7C00A03269 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7D4CB1E327F67E7C00A03269 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		7D4CB1EB27F67F8900A03269 /* Landing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Landing.swift; sourceTree = "<group>"; };
+		7D4CB1F027F6851900A03269 /* selectResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = selectResultView.swift; sourceTree = "<group>"; };
+		7D4CB1F227F68C2500A03269 /* FilterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewModel.swift; sourceTree = "<group>"; };
+		7D6A0EBF27F9C30800F3E87E /* DropdownSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownSelectorView.swift; sourceTree = "<group>"; };
+		7D6A0EC127F9DAAD00F3E87E /* DropdownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownView.swift; sourceTree = "<group>"; };
+		7D6A0EC327F9DF9E00F3E87E /* DropdownRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownRowView.swift; sourceTree = "<group>"; };
+		7D6A0EC527F9E35700F3E87E /* DropdownSelectorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownSelectorViewModel.swift; sourceTree = "<group>"; };
+		7D6A0EC727F9E55100F3E87E /* SelectorsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectorsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +67,10 @@
 		7D4CB1DB27F67E7A00A03269 /* functionArchive */ = {
 			isa = PBXGroup;
 			children = (
+				7D4CB1EA27F67ED100A03269 /* Presentation */,
 				7D4CB1DC27F67E7A00A03269 /* functionArchiveApp.swift */,
 				7D4CB1DE27F67E7A00A03269 /* ContentView.swift */,
+				7D4CB1EB27F67F8900A03269 /* Landing.swift */,
 				7D4CB1E027F67E7C00A03269 /* Assets.xcassets */,
 				7D4CB1E227F67E7C00A03269 /* Preview Content */,
 			);
@@ -65,6 +83,68 @@
 				7D4CB1E327F67E7C00A03269 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		7D4CB1EA27F67ED100A03269 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				7D6A0EBC27F9C27D00F3E87E /* ReusableDropDownSelector */,
+				7D4CB1ED27F6838400A03269 /* MultiSelectionFilter */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		7D4CB1ED27F6838400A03269 /* MultiSelectionFilter */ = {
+			isa = PBXGroup;
+			children = (
+				7D4CB1EF27F683A700A03269 /* ViewModel */,
+				7D4CB1EE27F683A100A03269 /* View */,
+			);
+			path = MultiSelectionFilter;
+			sourceTree = "<group>";
+		};
+		7D4CB1EE27F683A100A03269 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7D4CB1F027F6851900A03269 /* selectResultView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7D4CB1EF27F683A700A03269 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				7D4CB1F227F68C2500A03269 /* FilterViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		7D6A0EBC27F9C27D00F3E87E /* ReusableDropDownSelector */ = {
+			isa = PBXGroup;
+			children = (
+				7D6A0EBE27F9C2E500F3E87E /* ViewModel */,
+				7D6A0EBD27F9C2DE00F3E87E /* View */,
+			);
+			path = ReusableDropDownSelector;
+			sourceTree = "<group>";
+		};
+		7D6A0EBD27F9C2DE00F3E87E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7D6A0EC727F9E55100F3E87E /* SelectorsView.swift */,
+				7D6A0EBF27F9C30800F3E87E /* DropdownSelectorView.swift */,
+				7D6A0EC127F9DAAD00F3E87E /* DropdownView.swift */,
+				7D6A0EC327F9DF9E00F3E87E /* DropdownRowView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7D6A0EBE27F9C2E500F3E87E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				7D6A0EC527F9E35700F3E87E /* DropdownSelectorViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +217,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D6A0EC427F9DF9E00F3E87E /* DropdownRowView.swift in Sources */,
+				7D4CB1EC27F67F8900A03269 /* Landing.swift in Sources */,
 				7D4CB1DF27F67E7A00A03269 /* ContentView.swift in Sources */,
+				7D6A0EC827F9E55100F3E87E /* SelectorsView.swift in Sources */,
+				7D6A0EC027F9C30800F3E87E /* DropdownSelectorView.swift in Sources */,
+				7D4CB1F327F68C2500A03269 /* FilterViewModel.swift in Sources */,
+				7D6A0EC627F9E35700F3E87E /* DropdownSelectorViewModel.swift in Sources */,
 				7D4CB1DD27F67E7A00A03269 /* functionArchiveApp.swift in Sources */,
+				7D6A0EC227F9DAAD00F3E87E /* DropdownView.swift in Sources */,
+				7D4CB1F127F6851900A03269 /* selectResultView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
