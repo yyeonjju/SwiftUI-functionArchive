@@ -20,6 +20,9 @@ struct Landing: View {
                     NavigationLink(destination : SelectorsView()){
                         Text("Reusable Dropdown Selector")
                     }
+                    NavigationLink(destination : ScoreView()){
+                        Text("Practice @EnvironmentObject")
+                    }
                 }
             }
         }
