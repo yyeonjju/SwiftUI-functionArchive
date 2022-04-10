@@ -23,6 +23,12 @@ struct Landing: View {
                     NavigationLink(destination : ScoreView()){
                         Text("Practice @EnvironmentObject")
                     }
+                    NavigationLink(destination : PostRequestPractice()){
+                        Text("Post Request Practice")
+                    }
+                    NavigationLink(destination : SearchableListView()){
+                        Text("Searchable")
+                    }
                 }
             }
         }

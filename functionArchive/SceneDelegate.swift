@@ -30,6 +30,12 @@ class SceneDelegate: NSObject, UIWindowSceneDelegate {
                 //✅✅✅ 이제 @ObservedObject가 아닌 @EnvironmentObject로 어느 뷰에서나 userSetting에 접근할 수 있다!!!✅✅✅
                 window.rootViewController = UIHostingController(rootView: contentView.environmentObject(userSetting))
                 
+                //🌸 searchable에 쓰이는 회사 이름 리스트도 전역으로 설정해주기
+                let searchableListViewModel = SearchableListViewModel()
+
+                window.rootViewController = UIHostingController(rootView: contentView.environmentObject(searchableListViewModel))
+                
+                
                 
 //                window.rootViewController  = UIHostingController(rootView: contentView)
                 self.window = window
