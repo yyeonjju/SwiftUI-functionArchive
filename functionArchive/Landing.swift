@@ -29,6 +29,31 @@ struct Landing: View {
                     NavigationLink(destination : SearchableListView()){
                         Text("Searchable")
                     }
+                    NavigationLink(destination : SnapCarousel()){
+                        Text("SnapCarousel")
+                    }
+                    NavigationLink(destination : FullscreenCarouselView(
+                        spacing: 20,
+                        itemsData: [TestStruct(), TestStruct(), TestStruct(), TestStruct()],
+                        zoomFactor: 0.7){ itemData in
+                            // this view is wrapped in VStack with proper width
+                            VStack {
+                                VStack {
+                                    Text("some thing \(itemData.test)")
+                                        .frame(maxWidth: .infinity, minHeight: 100)
+                                        .background(Color.red)
+                                }
+                            }
+                        }
+                    ){
+                        Text("FullscreenCarouselView")
+                    }
+                    NavigationLink(destination : HorizontalList()){
+                        Text("HorizontalList")
+                    }
+                    
+                    
+                    
                 }
             }
         }

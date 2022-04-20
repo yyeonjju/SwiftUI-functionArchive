@@ -32,8 +32,11 @@ class SceneDelegate: NSObject, UIWindowSceneDelegate {
                 
                 //🌸 searchable에 쓰이는 회사 이름 리스트도 전역으로 설정해주기
                 let searchableListViewModel = SearchableListViewModel()
-
                 window.rootViewController = UIHostingController(rootView: contentView.environmentObject(searchableListViewModel))
+                
+                //캐러셀 리스트?
+                let UIState = UIStateModel()
+                window.rootViewController = UIHostingController(rootView: contentView.environmentObject(UIState))
                 
                 
                 
