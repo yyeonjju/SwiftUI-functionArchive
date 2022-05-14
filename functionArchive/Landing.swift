@@ -52,6 +52,10 @@ struct Landing: View {
                         Text("HorizontalList")
                     }
                     
+                    NavigationLink(destination : DatePickerView()){
+                        Text("DatePicker")
+                    }
+                    
                     
                     
                 }
