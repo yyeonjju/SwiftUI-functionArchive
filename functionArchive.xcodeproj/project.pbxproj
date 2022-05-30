@@ -12,6 +12,7 @@
 		7D255D3D280299BB00EE2C1A /* SearchableListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D255D3C280299BB00EE2C1A /* SearchableListViewModel.swift */; };
 		7D45E516280DC10800CB97B3 /* SnapCarousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D45E515280DC10800CB97B3 /* SnapCarousel.swift */; };
 		7D45E518280DC79A00CB97B3 /* Carousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D45E517280DC79A00CB97B3 /* Carousel.swift */; };
+		7D467485282F2C140054C705 /* YearMonthPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D467484282F2C140054C705 /* YearMonthPicker.swift */; };
 		7D4CB1DD27F67E7A00A03269 /* functionArchiveApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4CB1DC27F67E7A00A03269 /* functionArchiveApp.swift */; };
 		7D4CB1DF27F67E7A00A03269 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4CB1DE27F67E7A00A03269 /* ContentView.swift */; };
 		7D4CB1E127F67E7C00A03269 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D4CB1E027F67E7C00A03269 /* Assets.xcassets */; };
@@ -20,6 +21,7 @@
 		7D4CB1F127F6851900A03269 /* selectResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4CB1F027F6851900A03269 /* selectResultView.swift */; };
 		7D4CB1F327F68C2500A03269 /* FilterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4CB1F227F68C2500A03269 /* FilterViewModel.swift */; };
 		7D54C887280E94BD0047B277 /* HorizontalList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D54C886280E94BD0047B277 /* HorizontalList.swift */; };
+		7D602AC4283DADC700EF58EA /* AutoCompleteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D602AC3283DADC700EF58EA /* AutoCompleteView.swift */; };
 		7D6A0EC027F9C30800F3E87E /* DropdownSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D6A0EBF27F9C30800F3E87E /* DropdownSelectorView.swift */; };
 		7D6A0EC227F9DAAD00F3E87E /* DropdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D6A0EC127F9DAAD00F3E87E /* DropdownView.swift */; };
 		7D6A0EC427F9DF9E00F3E87E /* DropdownRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D6A0EC327F9DF9E00F3E87E /* DropdownRowView.swift */; };
@@ -39,6 +41,7 @@
 		7D255D3C280299BB00EE2C1A /* SearchableListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchableListViewModel.swift; sourceTree = "<group>"; };
 		7D45E515280DC10800CB97B3 /* SnapCarousel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapCarousel.swift; sourceTree = "<group>"; };
 		7D45E517280DC79A00CB97B3 /* Carousel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Carousel.swift; sourceTree = "<group>"; };
+		7D467484282F2C140054C705 /* YearMonthPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearMonthPicker.swift; sourceTree = "<group>"; };
 		7D4CB1D927F67E7A00A03269 /* functionArchive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = functionArchive.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D4CB1DC27F67E7A00A03269 /* functionArchiveApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = functionArchiveApp.swift; sourceTree = "<group>"; };
 		7D4CB1DE27F67E7A00A03269 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -48,6 +51,7 @@
 		7D4CB1F027F6851900A03269 /* selectResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = selectResultView.swift; sourceTree = "<group>"; };
 		7D4CB1F227F68C2500A03269 /* FilterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewModel.swift; sourceTree = "<group>"; };
 		7D54C886280E94BD0047B277 /* HorizontalList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalList.swift; sourceTree = "<group>"; };
+		7D602AC3283DADC700EF58EA /* AutoCompleteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoCompleteView.swift; sourceTree = "<group>"; };
 		7D6A0EBF27F9C30800F3E87E /* DropdownSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownSelectorView.swift; sourceTree = "<group>"; };
 		7D6A0EC127F9DAAD00F3E87E /* DropdownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownView.swift; sourceTree = "<group>"; };
 		7D6A0EC327F9DF9E00F3E87E /* DropdownRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownRowView.swift; sourceTree = "<group>"; };
@@ -95,6 +99,7 @@
 		7D467483282F2BA70054C705 /* YearMonthpicker */ = {
 			isa = PBXGroup;
 			children = (
+				7D467484282F2C140054C705 /* YearMonthPicker.swift */,
 			);
 			path = YearMonthpicker;
 			sourceTree = "<group>";
@@ -141,6 +146,7 @@
 		7D4CB1EA27F67ED100A03269 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				7D602AC2283DADB100EF58EA /* AutoComplete */,
 				7D467483282F2BA70054C705 /* YearMonthpicker */,
 				7DCA9B562823A8BB0068AB11 /* DatePicker */,
 				7D45E514280DBF9100CB97B3 /* CarouselList */,
@@ -176,6 +182,14 @@
 				7D4CB1F227F68C2500A03269 /* FilterViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		7D602AC2283DADB100EF58EA /* AutoComplete */ = {
+			isa = PBXGroup;
+			children = (
+				7D602AC3283DADC700EF58EA /* AutoCompleteView.swift */,
+			);
+			path = AutoComplete;
 			sourceTree = "<group>";
 		};
 		7D6A0EBC27F9C27D00F3E87E /* ReusableDropDownSelector */ = {
@@ -316,11 +330,13 @@
 				7D45E518280DC79A00CB97B3 /* Carousel.swift in Sources */,
 				7D4CB1DF27F67E7A00A03269 /* ContentView.swift in Sources */,
 				7D255D392802930800EE2C1A /* SearchableListView.swift in Sources */,
+				7D602AC4283DADC700EF58EA /* AutoCompleteView.swift in Sources */,
 				7DCA9B582823A8D10068AB11 /* DatePicker.swift in Sources */,
 				7D6A0EDF27FD730A00F3E87E /* AppDelegate.swift in Sources */,
 				7D6A0EC827F9E55100F3E87E /* SelectorsView.swift in Sources */,
 				7D45E516280DC10800CB97B3 /* SnapCarousel.swift in Sources */,
 				7D6A0EDB27FD6D1900F3E87E /* ScoreView.swift in Sources */,
+				7D467485282F2C140054C705 /* YearMonthPicker.swift in Sources */,
 				7D6A0EC027F9C30800F3E87E /* DropdownSelectorView.swift in Sources */,
 				7D4CB1F327F68C2500A03269 /* FilterViewModel.swift in Sources */,
 				7D255D3B2802989700EE2C1A /* CompanyNameFetcher.swift in Sources */,

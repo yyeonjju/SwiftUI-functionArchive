@@ -35,8 +35,8 @@ class SceneDelegate: NSObject, UIWindowSceneDelegate {
                 window.rootViewController = UIHostingController(rootView: contentView.environmentObject(searchableListViewModel))
                 
                 //캐러셀 리스트?
-                let UIState = UIStateModel()
-                window.rootViewController = UIHostingController(rootView: contentView.environmentObject(UIState))
+//                let UIState = UIStateModel()
+//                window.rootViewController = UIHostingController(rootView: contentView.environmentObject(UIState))
                 
                 
                 
