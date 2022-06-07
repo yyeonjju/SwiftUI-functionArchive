@@ -60,12 +60,12 @@ struct Landing: View {
                         NavigationLink(destination: YearMonthPicker()){
                             Text("YearMonthPicker")
                         }
-                        
-
-                        
                     }
                     NavigationLink(destination: AutoCompleteView()){
                         Text("AutoCompleteView")
+                    }
+                    NavigationLink(destination : TooltipFunctionView()){
+                        Text("Tooltip")
                     }
                 }
             }
