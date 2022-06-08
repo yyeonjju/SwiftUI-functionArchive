@@ -33,6 +33,7 @@
 		7D6A0EDD27FD72DE00F3E87E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D6A0EDC27FD72DE00F3E87E /* SceneDelegate.swift */; };
 		7D6A0EDF27FD730A00F3E87E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D6A0EDE27FD730A00F3E87E /* AppDelegate.swift */; };
 		7D6A0EE227FE74F300F3E87E /* PostRequestPractice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D6A0EE127FE74F300F3E87E /* PostRequestPractice.swift */; };
+		7D7D1AC9284F3895003FFDE8 /* AlertBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7D1AC8284F3895003FFDE8 /* AlertBackgroundView.swift */; };
 		7DCA9B582823A8D10068AB11 /* DatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCA9B572823A8D10068AB11 /* DatePicker.swift */; };
 /* End PBXBuildFile section */
 
@@ -64,6 +65,7 @@
 		7D6A0EDC27FD72DE00F3E87E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		7D6A0EDE27FD730A00F3E87E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7D6A0EE127FE74F300F3E87E /* PostRequestPractice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostRequestPractice.swift; sourceTree = "<group>"; };
+		7D7D1AC8284F3895003FFDE8 /* AlertBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertBackgroundView.swift; sourceTree = "<group>"; };
 		7DCA9B572823A8D10068AB11 /* DatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -148,6 +150,7 @@
 		7D4CB1EA27F67ED100A03269 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				7D7D1AC5284F3865003FFDE8 /* Alert */,
 				7D4F6E202844532E008DF072 /* Tooltip */,
 				7D602AC2283DADB100EF58EA /* AutoComplete */,
 				7D467483282F2BA70054C705 /* YearMonthpicker */,
@@ -256,6 +259,14 @@
 			path = PostRequest;
 			sourceTree = "<group>";
 		};
+		7D7D1AC5284F3865003FFDE8 /* Alert */ = {
+			isa = PBXGroup;
+			children = (
+				7D7D1AC8284F3895003FFDE8 /* AlertBackgroundView.swift */,
+			);
+			path = Alert;
+			sourceTree = "<group>";
+		};
 		7DCA9B562823A8BB0068AB11 /* DatePicker */ = {
 			isa = PBXGroup;
 			children = (
@@ -355,6 +366,7 @@
 				7D6A0EDD27FD72DE00F3E87E /* SceneDelegate.swift in Sources */,
 				7D6A0EE227FE74F300F3E87E /* PostRequestPractice.swift in Sources */,
 				7D6A0EC627F9E35700F3E87E /* DropdownSelectorViewModel.swift in Sources */,
+				7D7D1AC9284F3895003FFDE8 /* AlertBackgroundView.swift in Sources */,
 				7D4CB1DD27F67E7A00A03269 /* functionArchiveApp.swift in Sources */,
 				7D6A0EC227F9DAAD00F3E87E /* DropdownView.swift in Sources */,
 				7D255D3D280299BB00EE2C1A /* SearchableListViewModel.swift in Sources */,

@@ -67,6 +67,10 @@ struct Landing: View {
                     NavigationLink(destination : TooltipFunctionView()){
                         Text("Tooltip")
                     }
+                    
+                    NavigationLink(destination: AlertBackgroundView()){
+                        Text("Alert")
+                    }
                 }
             }
         }
