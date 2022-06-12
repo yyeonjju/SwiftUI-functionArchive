@@ -71,6 +71,13 @@ struct Landing: View {
                     NavigationLink(destination: AlertBackgroundView()){
                         Text("Alert")
                     }
+                    NavigationLink(destination: SlotDragView()){
+                        Text("Slot")
+                    }
+                    
+                    NavigationLink(destination: WrappingHstackPracticeView()){
+                        Text("Wrapping Hstack Multiple Lines Practice")
+                    }
                 }
             }
         }
