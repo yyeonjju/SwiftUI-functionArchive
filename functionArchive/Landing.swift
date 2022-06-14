@@ -78,6 +78,10 @@ struct Landing: View {
                     NavigationLink(destination: WrappingHstackPracticeView()){
                         Text("Wrapping Hstack Multiple Lines Practice")
                     }
+                    
+                    NavigationLink(destination: ModalPracticeView()){
+                        Text("Custom Modal Practice")
+                    }
                 }
             }
         }
