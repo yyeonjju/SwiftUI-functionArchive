@@ -88,6 +88,9 @@ struct Landing: View {
                     NavigationLink(destination: OpenOtherAppView()){
                         Text("Open Other App")
                     }
+                    NavigationLink(destination: OpenPdfFileView()){
+                        Text("OpenPdfFileView")
+                    }
                     
                 }
             }
