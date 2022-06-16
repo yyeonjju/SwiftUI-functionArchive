@@ -82,6 +82,13 @@ struct Landing: View {
                     NavigationLink(destination: ModalPracticeView()){
                         Text("Custom Modal Practice")
                     }
+                    NavigationLink(destination: FileDownloadView()){
+                        Text("File Download")
+                    }
+                    NavigationLink(destination: OpenOtherAppView()){
+                        Text("Open Other App")
+                    }
+                    
                 }
             }
         }
