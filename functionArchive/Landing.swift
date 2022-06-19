@@ -61,36 +61,43 @@ struct Landing: View {
                             Text("YearMonthPicker")
                         }
                     }
-                    NavigationLink(destination: AutoCompleteView()){
-                        Text("AutoCompleteView")
+                    Group{
+                        NavigationLink(destination: AutoCompleteView()){
+                            Text("AutoCompleteView")
+                        }
+                        NavigationLink(destination : TooltipFunctionView()){
+                            Text("Tooltip")
+                        }
+                        
+                        NavigationLink(destination: AlertBackgroundView()){
+                            Text("Alert")
+                        }
+                        NavigationLink(destination: SlotDragView()){
+                            Text("Slot")
+                        }
+                        
+                        NavigationLink(destination: WrappingHstackPracticeView()){
+                            Text("Wrapping Hstack Multiple Lines Practice")
+                        }
+                        
+                        NavigationLink(destination: ModalPracticeView()){
+                            Text("Custom Modal Practice")
+                        }
+                        NavigationLink(destination: FileDownloadView()){
+                            Text("File Download")
+                        }
+                        NavigationLink(destination: OpenOtherAppView()){
+                            Text("Open Other App")
+                        }
+                        NavigationLink(destination: OpenPdfFileView()){
+                            Text("Open Pdf File")
+                        }
+                        NavigationLink(destination: ScrollPracticeView()){
+                            Text("Scroll Practice")
+                        }
+                        
                     }
-                    NavigationLink(destination : TooltipFunctionView()){
-                        Text("Tooltip")
-                    }
-                    
-                    NavigationLink(destination: AlertBackgroundView()){
-                        Text("Alert")
-                    }
-                    NavigationLink(destination: SlotDragView()){
-                        Text("Slot")
-                    }
-                    
-                    NavigationLink(destination: WrappingHstackPracticeView()){
-                        Text("Wrapping Hstack Multiple Lines Practice")
-                    }
-                    
-                    NavigationLink(destination: ModalPracticeView()){
-                        Text("Custom Modal Practice")
-                    }
-                    NavigationLink(destination: FileDownloadView()){
-                        Text("File Download")
-                    }
-                    NavigationLink(destination: OpenOtherAppView()){
-                        Text("Open Other App")
-                    }
-                    NavigationLink(destination: OpenPdfFileView()){
-                        Text("OpenPdfFileView")
-                    }
+                   
                     
                 }
             }

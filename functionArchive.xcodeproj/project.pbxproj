@@ -40,6 +40,7 @@
 		7D6A0EE227FE74F300F3E87E /* PostRequestPractice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D6A0EE127FE74F300F3E87E /* PostRequestPractice.swift */; };
 		7D7D1AC9284F3895003FFDE8 /* AlertBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7D1AC8284F3895003FFDE8 /* AlertBackgroundView.swift */; };
 		7D7D1ACC28506FCA003FFDE8 /* SlotDragView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7D1ACB28506FCA003FFDE8 /* SlotDragView.swift */; };
+		7D87C63F285B593C00753A24 /* ScrollPracticeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D87C63E285B593C00753A24 /* ScrollPracticeView.swift */; };
 		7DCA9B582823A8D10068AB11 /* DatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCA9B572823A8D10068AB11 /* DatePicker.swift */; };
 /* End PBXBuildFile section */
 
@@ -78,6 +79,7 @@
 		7D6A0EE127FE74F300F3E87E /* PostRequestPractice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostRequestPractice.swift; sourceTree = "<group>"; };
 		7D7D1AC8284F3895003FFDE8 /* AlertBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertBackgroundView.swift; sourceTree = "<group>"; };
 		7D7D1ACB28506FCA003FFDE8 /* SlotDragView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlotDragView.swift; sourceTree = "<group>"; };
+		7D87C63E285B593C00753A24 /* ScrollPracticeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollPracticeView.swift; sourceTree = "<group>"; };
 		7DCA9B572823A8D10068AB11 /* DatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -186,6 +188,7 @@
 		7D4CB1EA27F67ED100A03269 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				7D87C63D285B591A00753A24 /* ScrollPractice */,
 				7D33E2CD285AD1E900B2AC34 /* OpenPdfFile */,
 				7D33E2C5285975B500B2AC34 /* OpenOtherApp */,
 				7D666859285843BD0097A524 /* FileDownload */,
@@ -333,6 +336,14 @@
 			path = SlotDrag;
 			sourceTree = "<group>";
 		};
+		7D87C63D285B591A00753A24 /* ScrollPractice */ = {
+			isa = PBXGroup;
+			children = (
+				7D87C63E285B593C00753A24 /* ScrollPracticeView.swift */,
+			);
+			path = ScrollPractice;
+			sourceTree = "<group>";
+		};
 		7DCA9B562823A8BB0068AB11 /* DatePicker */ = {
 			isa = PBXGroup;
 			children = (
@@ -412,6 +423,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7D6668542855BCD90097A524 /* ModalPracticeView.swift in Sources */,
+				7D87C63F285B593C00753A24 /* ScrollPracticeView.swift in Sources */,
 				7D6A0ED927FD6CD500F3E87E /* MyScoreView.swift in Sources */,
 				7D6A0EC427F9DF9E00F3E87E /* DropdownRowView.swift in Sources */,
 				7D54C887280E94BD0047B277 /* HorizontalList.swift in Sources */,
