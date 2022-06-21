@@ -68,8 +68,12 @@ struct ScrollPracticeView_Previews: PreviewProvider {
 //    }
 //}
 
-
+//⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️ 최종 이렇게!! ⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️ ⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️
+//⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️ => but 스크롤 안정화를위해 progress 1초동안 보여줄수 있도록 했으므로 리팩토링 필요
 //https://www.thirdrocktechkno.com/blog/implementing-reversed-scrolling-behaviour-in-swiftui/
+//import SwiftUI
+//import Combine
+//
 //import SwiftUI
 //import Combine
 //
@@ -89,8 +93,8 @@ struct ScrollPracticeView_Previews: PreviewProvider {
 //                content
 //            }
 //        case .vertical:
-//            LazyVStack {
-////            VStack {
+////            LazyVStack {
+//            VStack {
 //                content
 //            }
 //        default:
@@ -142,15 +146,31 @@ struct ScrollPracticeView_Previews: PreviewProvider {
 //
 //struct EducationChannelDetailView: View {
 //
-//    @ObservedObject var vm: EducationChannelViewModel = EducationChannelViewModel()
+//    @StateObject var vm: EducationChannelViewModel = EducationChannelViewModel()
+//    @StateObject var feedbackModalVM : FeedbackModalViewModel = FeedbackModalViewModel()
 //
 //    @State private var rejectModalState :ModalState = ModalState(isShown : false, relatedId: nil, text : "")
-//    @State private var cancelModalState :ModalState = ModalState(isShown : false, relatedId: nil, text : "")
+//    @State private var cancelModalState :ModalState = ModalState(isShown : false, relatedId: nil, text : "", by : nil)
 //    @State private var cancelConfirmModalState :ModalState = ModalState(isShown : false, relatedId: nil)
 //    @State private var blockChangeModalState :ModalState = ModalState(isShown : false)
 //    @State private var blockFeedbackWriteModalState :ModalState = ModalState(isShown : false)
 //    @State private var blockZoomLinkModalState :ModalState = ModalState(isShown : false)
+//    @State private var feedbackModalState :ModalState = ModalState(isShown : false, relatedId: nil, text : "", starRating : 0, operation: .create)
+//    @State private var progress = true
 //
+//    //특정 멘토링에 대해 마지막 메시지의 인덱스 set
+//    private var lastestMessageIndexs : [Int] {
+//        var uniquedMentoringIds : [Int] = vm.messages.map{$0.mentoring_id}.uniqued()
+//        return uniquedMentoringIds.map{ id in
+//            //⭐️ messages가 생성된 시간 순으로 내리차순(최신이 맨 처음)이면
+//            //            let latestMessageIndex = vm.messages.firstIndex(where: { el in
+//            //                el.mentoring_id == id})
+//            //⭐️ messages가 생성된 시간 순으로 오름차순(최신이 맨 나중)이면
+//            let latestMessageIndex = vm.messages.lastIndex(where: { el in
+//                el.mentoring_id == id})
+//            return latestMessageIndex ?? -1
+//        }
+//    }
 //
 //
 //    var channel_id: Int
@@ -161,110 +181,122 @@ struct ScrollPracticeView_Previews: PreviewProvider {
 //                .edgesIgnoringSafeArea(.all)
 //                .onTapGesture{
 //                    print(vm.messages)
+//                    print(lastestMessageIndexs)
 //                }
+//
 //            ScrollViewReader{ scrollView in
 //                ReversedScrollView(.vertical){
-//    //            ScrollView{
-////                    LazyVStack{
-//                        ForEach(vm.messages, id : \.self){ message in
+//                    //            ScrollView{
+//                    ForEach(Array(vm.messages.enumerated()), id : \.offset){ index, message in
 //
-//                            HStack (alignment: .top) {
+//                        HStack (alignment: .top) {
 //
-//                                VStack (alignment: .leading) {
-//                                    Image("appicon")
-//                                        .resizable()
-//                                        .frame(width: 48, height: 48)
-//                                }
+//                            VStack (alignment: .leading) {
+//                                Image("appicon")
+//                                    .resizable()
+//                                    .frame(width: 48, height: 48)
+//                            }
 //
-//                                VStack (alignment: .leading) {
-//                                    Text(message.text ?? "")
-//                                        .font(.system(size: 14))
-//                                        .padding()
-//                                        .frame(maxWidth: .infinity, alignment: .leading)
-//                                        .background(customColor)
-//                                        .cornerRadius(12)
+//                            VStack (alignment: .leading) {
+//                                Text(message.text ?? "")
+//                                    .font(.system(size: 14))
+//                                    .padding()
+//                                    .frame(maxWidth: .infinity, alignment: .leading)
+//                                    .background(customColor)
+//                                    .cornerRadius(12)
 //
-//                                    if TestUserType.type == "mentor" { //멘토
-//                                        if (message.type == "request_pending" ||
-//                                            message.type == "request_accepted" ||
-//                                            message.type == "completed") {//요청됨, 확정됨, 종료됨
-//                                            EducationChannelDetailMentoringOverall(
-//                                                id: message.id,
-//                                                type: message.type,
-//                                                rejectModalState:$rejectModalState,
-//                                                cancelModalState:$cancelModalState,
-//                                                cancelConfirmModalState : $cancelConfirmModalState,
-//                                                blockZoomLinkModalState: $blockZoomLinkModalState)
-//                                        } else if (message.type == "request_rejected" ||
-//                                                   message.type == "mentoring_rejected_extra" ||
-//                                                   message.type == "canceled_by_mentor" ||
-//                                                   message.type == "canceled_by_mentee") {//거절됨, 취소됨(?)
-//                                            EducationChannelDetailMentoringRejectCancel(
-//                                                id: message.id,
-//                                                type: message.type,
-//                                                userType:TestUserType.type)
+//                                if TestUserType.type == "mentor" { //멘토
+//                                    if (message.type == "request_pending" ||
+//                                        message.type == "request_accepted" ||
+//                                        message.type == "completed") {//요청됨, 확정됨, 종료됨
+//                                        EducationChannelDetailMentoringOverall(
+//                                            id: message.id,
+//                                            type: message.type,
+//                                            showButton : lastestMessageIndexs.contains(index), //특정 멘토링에 대해 마지막 메시지의 인덱스 set에 포함될 때만 버튼 보이도록하기 위해
+//                                            mentoringId : message.mentoring_id,
+//                                            rejectModalState:$rejectModalState,
+//                                            cancelModalState:$cancelModalState,
+//                                            cancelConfirmModalState : $cancelConfirmModalState,
+//                                            blockZoomLinkModalState: $blockZoomLinkModalState,
+//                                            feedbackModalState : $feedbackModalState)
+//                                    } else if (message.type == "request_rejected" ||
+//                                               message.type == "mentoring_rejected_extra" ||
+//                                               message.type == "canceled_by_mentor" ||
+//                                               message.type == "canceled_by_mentee") {//거절됨, 취소됨(?)
+//                                        EducationChannelDetailMentoringRejectCancel(
+//                                            id: message.id,
+//                                            type: message.type,
+//                                            userType:TestUserType.type,
+//                                            showButton : lastestMessageIndexs.contains(index)
+//                                        )
 //
-//                                        }else if (message.type == "mentoring_requested_extra") {
-//                                            //                            EducationChannelDetailMentoringRequestedExtra(id: message.id, type: message.type)
+//                                    }else if (message.type == "mentoring_requested_extra") {
+//                                        //                            EducationChannelDetailMentoringRequestedExtra(id: message.id, type: message.type)
 //
-//                                        } else {
-//                                            Text("")
-//                                        }
-//                                    } else { //멘티
-//                                        if (message.type == "request_pending") {//요청됨
-//                                            EducationChannelDetailMentoringCreated(
-//                                                id: message.id,
-//                                                type: message.type,
-//                                                cancelConfirmModalState : $cancelConfirmModalState,
-//                                                blockChangeModalState:$blockChangeModalState)
+//                                    } else {
+//                                        Text("")
+//                                    }
+//                                } else { //멘티
+//                                    if (message.type == "request_pending") {//요청됨
+//                                        EducationChannelDetailMentoringCreated(
+//                                            id: message.id,
+//                                            type: message.type,
+//                                            mentoringId : message.mentoring_id,
+//                                            showButton : lastestMessageIndexs.contains(index),
+//                                            cancelConfirmModalState : $cancelConfirmModalState,
+//                                            cancelModalState:$cancelModalState,
+//                                            blockChangeModalState:$blockChangeModalState)
 //
-//                                        } else if (message.type == "request_accepted") { //확정됨
-//                                            EducationChannelDetailMentoringConfirmed(
-//                                                id: message.id,
-//                                                type: message.type,
-//                                                cancelConfirmModalState:$cancelConfirmModalState,
-//                                                blockChangeModalState : $blockChangeModalState,
-//                                                blockZoomLinkModalState: $blockZoomLinkModalState)
+//                                    } else if (message.type == "request_accepted") { //확정됨
+//                                        EducationChannelDetailMentoringConfirmed(
+//                                            id: message.id,
+//                                            type: message.type,
+//                                            mentoringId : message.mentoring_id,
+//                                            showButton : lastestMessageIndexs.contains(index),
+//                                            cancelConfirmModalState:$cancelConfirmModalState,
+//                                            cancelModalState:$cancelModalState,
+//                                            blockChangeModalState : $blockChangeModalState,
+//                                            blockZoomLinkModalState: $blockZoomLinkModalState)
 //
-//                                        } else if (message.type == "completed") {//종료됨
-//                                            EducationChannelDetailMentoringComplete(
-//                                                id: message.id,
-//                                                type: message.type,
-//                                                blockFeedbackWriteModalState : $blockFeedbackWriteModalState)
+//                                    } else if (message.type == "completed") {//종료됨
+//                                        //멘토링 종료에서는 피드백 버튼이 나오므로 마지막메시지이냐 아니냐 여부에 상관없이 버튼 보여주어서 showButton넘기지 않음
+//                                        EducationChannelDetailMentoringComplete(
+//                                            id: message.id,
+//                                            type: message.type,
+//                                            blockFeedbackWriteModalState : $blockFeedbackWriteModalState,
+//                                            feedbackModalState : $feedbackModalState)
 //
-//                                        } else if (message.type == "request_rejected" ||
-//                                                   message.type == "mentoring_rejected_extra" ||
-//                                                   message.type == "canceled_by_mentor" || message.type == "canceled_by_mentee") {//거절됨, 취소됨(?)
-//                                            EducationChannelDetailMentoringRejectCancel(
-//                                                id: message.id,
-//                                                type: message.type,
-//                                                userType:TestUserType.type)
+//                                    } else if (message.type == "request_rejected" ||
+//                                               message.type == "mentoring_rejected_extra" ||
+//                                               message.type == "canceled_by_mentor" || message.type == "canceled_by_mentee") {//거절됨, 취소됨(?)
+//                                        EducationChannelDetailMentoringRejectCancel(
+//                                            id: message.id,
+//                                            type: message.type,
+//                                            userType:TestUserType.type,
+//                                            showButton : lastestMessageIndexs.contains(index))
 //
-//                                        }else if (message.type == "mentoring_requested_extra") {
-//                                            //                            EducationChannelDetailMentoringRequestedExtra(id: message.id, type: message.type)
+//                                    }else if (message.type == "mentoring_requested_extra") {
+//                                        //                            EducationChannelDetailMentoringRequestedExtra(id: message.id, type: message.type)
 //
-//                                        } else {
-//                                            Text("")
-//                                        }
+//                                    } else {
+//                                        Text("")
 //                                    }
 //                                }
 //                            }
-//
 //                        }
-//                        .padding()
-////                    }
-//    //            }
-//                }
-//                .onChange(of: vm.messages) { message in
-//                    if message != []  {
 //
-//                        // withAnimation(.default) {
-//                        scrollView.scrollTo(message.last!, anchor: .top)
-//                        // }
 //                    }
+//                    .padding()
+//                    .onChange(of: vm.messages) { message in
+//                        if message != []  {
+//                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.7) {
+//                                scrollView.scrollTo((Array(vm.messages.enumerated()).count-1), anchor: .top)
+//                            }
+//                        }
+//                    }
+//                    //            }
 //                }
 //            }
-//
 //
 //            if(rejectModalState.isShown){
 //                rejectModalView
@@ -285,14 +317,29 @@ struct ScrollPracticeView_Previews: PreviewProvider {
 //            if(blockZoomLinkModalState.isShown){
 //                BasicModalView(title : "멘토링 10분 전부터 참여가 가능합니다.", isShown : $blockZoomLinkModalState.isShown)
 //            }
+//            if(feedbackModalState.isShown){
+//                FeedbackModalView
+//            }
+//
 //
 //        }
 //        .onAppear {
 //            vm.fetch(channelId : channel_id)
+//
+//            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+//                progress = false
+//            }
+//
 //        }
 //        .overlay {
-//            if (vm.messages.count == 0) {
-//                ProgressView()
+//            //리팩토링 필요
+//            // 메시지에서 스크롤 뷰가 안정화 될 때까지 ProgressView 띄워주려고
+//            if (vm.messages.count == 0 || progress) {
+//                GeometryReader{ geo in
+//                    ProgressView()
+//                        .frame(width: geo.size.width, height: geo.size.height)
+//                        .background(Color.white)
+//                }
 //            }
 //        }
 //
@@ -310,9 +357,9 @@ struct ScrollPracticeView_Previews: PreviewProvider {
 //                header : {
 //                    Text("거절 사유를 적어주세요")
 //                        .font(.system(size:16, weight: .bold))
-////                            .onTapGesture{
-////                                print(rejectModalState.text)
-////                            }
+//                    //                            .onTapGesture{
+//                    //                                print(rejectModalState.text)
+//                    //                            }
 //                },
 //                content : {
 //                    TextEditor(text:Binding(
@@ -328,7 +375,10 @@ struct ScrollPracticeView_Previews: PreviewProvider {
 //                },
 //                footer : {
 //                    Button{
-//                        print("로직")
+//                        vm.rejectMentoring(
+//                            mentoringId: rejectModalState.relatedId ?? 0,
+//                            memo: rejectModalState.text ?? ""
+//                        )
 //                        rejectModalState.isShown = false
 //                    } label : {
 //                        Text("확인")
@@ -350,9 +400,9 @@ struct ScrollPracticeView_Previews: PreviewProvider {
 //                header : {
 //                    Text("취소 사유를 적어주세요")
 //                        .font(.system(size:16, weight: .bold))
-////                            .onTapGesture{
-////                                print(rejectModalState.text)
-////                            }
+//                    //                            .onTapGesture{
+//                    //                                print(rejectModalState.text)
+//                    //                            }
 //                },
 //                content : {
 //                    TextEditor(text:Binding(
@@ -368,7 +418,11 @@ struct ScrollPracticeView_Previews: PreviewProvider {
 //                },
 //                footer : {
 //                    Button{
-//                        print("로직")
+//                        vm.cancelMentoring(
+//                            mentoringId: cancelModalState.relatedId ?? 0,
+//                            memo: cancelModalState.text ?? "",
+//                            by: cancelModalState.by ?? .mentor
+//                        )
 //                        cancelModalState.isShown = false
 //                    } label : {
 //                        Text("확인")
@@ -390,9 +444,9 @@ struct ScrollPracticeView_Previews: PreviewProvider {
 //                header : {
 //                    Text("정말 수업을 취소하시겠어요?")
 //                        .font(.system(size:16, weight: .bold))
-////                            .onTapGesture{
-////                                print(rejectModalState.text)
-////                            }
+//                    //                            .onTapGesture{
+//                    //                                print(rejectModalState.text)
+//                    //                            }
 //                },
 //                content : {
 //                    if TestUserType.type == "mentor" {
@@ -435,6 +489,117 @@ struct ScrollPracticeView_Previews: PreviewProvider {
 //        }
 //    }
 //
+//    var FeedbackModalView : some View { //멘티가 멘토에 대한 피드백 작서할 때, 멘토가 본인의 피드백 확인할 때
+//        ZStack{
+//            Color.black.opacity(0.3)
+//                .edgesIgnoringSafeArea(.all)
+//
+//            if(feedbackModalState.operation == .create){
+//                CustomNormalModal(
+//                    showingModal: $feedbackModalState.isShown,
+//                    header : {
+//                        Text("별점을 선택해주세요")
+//                            .font(.system(size:16, weight: .bold))
+//
+//                    },
+//                    content : {
+//
+//                        VStack{
+//                            RatingView(rating: $feedbackModalState.starRating, max: 5)
+//
+//                            Text("\(String(feedbackModalState.starRating!)).0")
+//                                .font(.system(size: 12))
+//                                .foregroundColor(.fontGray2)
+//                                .padding(.vertical)
+//
+//
+//                            ZStack{ //TextEditor에 따로 placeholder 넣는 기능이 없어서
+//                                if feedbackModalState.text == "" {
+//                                    TextEditor(text: Binding(
+//                                        get: {"어떤점이 좋았나요?"},
+//                                        set: {$0}
+//                                    ))
+//                                        .disabled(true)
+//                                        .padding()
+//                                        .foregroundColor(.gray)
+//                                        .frame(height: 200)
+//                                        .colorMultiply(Color.gray2)
+//                                        .background(Color.gray2)
+//                                        .cornerRadius(12)
+//                                }
+//
+//                                TextEditor(text:Binding(
+//                                    get: {feedbackModalState.text ?? ""},
+//                                    set: {feedbackModalState.text = $0}
+//                                ))
+//                                    .padding()
+//                                    .foregroundColor(.black)
+//                                    .frame(height: 200)
+//                                    .colorMultiply(Color.gray2)
+//                                    .background(Color.gray2)
+//                                    .opacity(feedbackModalState.text == "" ? 0.25 : 1)
+//                                    .cornerRadius(12)
+//                            }
+//                        }
+//                    },
+//                    footer : {
+//                        Button{
+//                            print("로직")
+//                            feedbackModalState.isShown = false //수업 취소 확인 모달은 사라지고
+//
+//                        } label : {
+//                            Text("확인")
+//                                .asGreenGradientButton()
+//                        }
+//                    }
+//
+//                )
+//            }
+//            if(feedbackModalState.operation == .view) {
+//                CustomNormalModal(
+//                    showingModal: $feedbackModalState.isShown,
+//                    header : {
+//                    },
+//                    content : {
+//                        VStack{
+//                            RatingView(
+//                                rating:  Binding(
+//                                    get: {feedbackModalVM.feedback?.rate ?? 0},
+//                                    set: {$0}
+//                                ),
+//                                max: 5,
+//                                operation: .view)
+//
+//                            Text("\(String(feedbackModalVM.feedback?.rate ?? 0)).0")
+//                                .font(.system(size: 12))
+//                                .foregroundColor(.fontGray2)
+//                                .padding(.vertical)
+//
+//                            TextEditor(text: Binding(
+//                                get: {feedbackModalVM.feedback?.text ?? ""},
+//                                set: {$0}
+//                            ))
+//                                .disabled(true)
+//                                .padding()
+//                                .foregroundColor(.black)
+//                                .frame(height: 200)
+//                                .colorMultiply(Color.gray2)
+//                                .background(Color.gray2)
+//                                .cornerRadius(12)
+//                        }
+//                        .onAppear{
+//                            feedbackModalVM.fetch()
+//                        }
+//                    },
+//                    footer : {
+//                    }
+//
+//                )
+//            }
+//
+//        }
+//    }
+//
 //}
 //
 //struct EducationChannelView_Previews: PreviewProvider {
@@ -442,5 +607,3 @@ struct ScrollPracticeView_Previews: PreviewProvider {
 //        EducationChannelDetailView(channel_id: 123)
 //    }
 //}
-
-
