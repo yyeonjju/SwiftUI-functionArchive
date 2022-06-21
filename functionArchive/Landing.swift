@@ -97,6 +97,10 @@ struct Landing: View {
                         }
                         
                     }
+                    
+                    NavigationLink(destination : StarRatingPracticeView()){
+                        Text("Star Rating Practice")
+                    }
                    
                     
                 }
