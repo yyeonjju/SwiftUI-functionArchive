@@ -101,6 +101,10 @@ struct Landing: View {
                     NavigationLink(destination : StarRatingPracticeView()){
                         Text("Star Rating Practice")
                     }
+                    
+                    NavigationLink(destination: FileUploadPractice()){
+                        Text("File Upload Practice")
+                    }
                    
                     
                 }

@@ -38,6 +38,7 @@
 		7D6A0EDD27FD72DE00F3E87E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D6A0EDC27FD72DE00F3E87E /* SceneDelegate.swift */; };
 		7D6A0EDF27FD730A00F3E87E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D6A0EDE27FD730A00F3E87E /* AppDelegate.swift */; };
 		7D6A0EE227FE74F300F3E87E /* PostRequestPractice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D6A0EE127FE74F300F3E87E /* PostRequestPractice.swift */; };
+		7D76FC862862E6EF00E7A1E0 /* FileUploadPractice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D76FC852862E6EF00E7A1E0 /* FileUploadPractice.swift */; };
 		7D7D1AC9284F3895003FFDE8 /* AlertBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7D1AC8284F3895003FFDE8 /* AlertBackgroundView.swift */; };
 		7D7D1ACC28506FCA003FFDE8 /* SlotDragView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7D1ACB28506FCA003FFDE8 /* SlotDragView.swift */; };
 		7D87C63F285B593C00753A24 /* ScrollPracticeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D87C63E285B593C00753A24 /* ScrollPracticeView.swift */; };
@@ -78,6 +79,7 @@
 		7D6A0EDC27FD72DE00F3E87E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		7D6A0EDE27FD730A00F3E87E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7D6A0EE127FE74F300F3E87E /* PostRequestPractice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostRequestPractice.swift; sourceTree = "<group>"; };
+		7D76FC852862E6EF00E7A1E0 /* FileUploadPractice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileUploadPractice.swift; sourceTree = "<group>"; };
 		7D7D1AC8284F3895003FFDE8 /* AlertBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertBackgroundView.swift; sourceTree = "<group>"; };
 		7D7D1ACB28506FCA003FFDE8 /* SlotDragView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlotDragView.swift; sourceTree = "<group>"; };
 		7D87C63E285B593C00753A24 /* ScrollPracticeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollPracticeView.swift; sourceTree = "<group>"; };
@@ -190,6 +192,7 @@
 		7D4CB1EA27F67ED100A03269 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				7D76FC842862E6C200E7A1E0 /* FileUpload */,
 				7D87C642285F5E5E00753A24 /* StarRatingPractice */,
 				7D87C63D285B591A00753A24 /* ScrollPractice */,
 				7D33E2CD285AD1E900B2AC34 /* OpenPdfFile */,
@@ -323,6 +326,14 @@
 			path = PostRequest;
 			sourceTree = "<group>";
 		};
+		7D76FC842862E6C200E7A1E0 /* FileUpload */ = {
+			isa = PBXGroup;
+			children = (
+				7D76FC852862E6EF00E7A1E0 /* FileUploadPractice.swift */,
+			);
+			name = FileUpload;
+			sourceTree = "<group>";
+		};
 		7D7D1AC5284F3865003FFDE8 /* Alert */ = {
 			isa = PBXGroup;
 			children = (
@@ -435,6 +446,7 @@
 			files = (
 				7D6668542855BCD90097A524 /* ModalPracticeView.swift in Sources */,
 				7D87C63F285B593C00753A24 /* ScrollPracticeView.swift in Sources */,
+				7D76FC862862E6EF00E7A1E0 /* FileUploadPractice.swift in Sources */,
 				7D6A0ED927FD6CD500F3E87E /* MyScoreView.swift in Sources */,
 				7D6A0EC427F9DF9E00F3E87E /* DropdownRowView.swift in Sources */,
 				7D54C887280E94BD0047B277 /* HorizontalList.swift in Sources */,
