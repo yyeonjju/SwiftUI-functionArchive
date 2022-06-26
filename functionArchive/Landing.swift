@@ -109,6 +109,9 @@ struct Landing: View {
                     NavigationLink(destination: WebViewPractice()){
                         Text("Web View Practice")
                     }
+                    NavigationLink(destination: FileUploadPractice2()){
+                        Text("File Upload Practice2")
+                    }
                 }
             }
         }
