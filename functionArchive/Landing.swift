@@ -112,6 +112,9 @@ struct Landing: View {
                     NavigationLink(destination: FileUploadPractice2()){
                         Text("File Upload Practice2")
                     }
+                    NavigationLink(destination: BottomSheetPractice()){
+                        Text("Bottom Sheet Practice")
+                    }
                 }
             }
         }
