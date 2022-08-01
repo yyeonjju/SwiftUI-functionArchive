@@ -115,6 +115,9 @@ struct Landing: View {
                     NavigationLink(destination: BottomSheetPractice()){
                         Text("Bottom Sheet Practice")
                     }
+                    NavigationLink(destination: TopTabview()){
+                        Text("Top Tabview")
+                    }
                 }
             }
         }
