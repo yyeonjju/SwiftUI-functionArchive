@@ -18,6 +18,10 @@
 		7D45E518280DC79A00CB97B3 /* Carousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D45E517280DC79A00CB97B3 /* Carousel.swift */; };
 		7D467485282F2C140054C705 /* YearMonthPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D467484282F2C140054C705 /* YearMonthPicker.swift */; };
 		7D489A882897BE0600FCA08C /* NavigateConditionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D489A872897BE0500FCA08C /* NavigateConditionView.swift */; };
+		7D489A8F289A041E00FCA08C /* FileManagerPracticeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D489A8E289A041E00FCA08C /* FileManagerPracticeView.swift */; };
+		7D489A91289A0C6400FCA08C /* FileManagerPracticeView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D489A90289A0C6400FCA08C /* FileManagerPracticeView2.swift */; };
+		7D489A94289A18B500FCA08C /* DocumentPickerPractice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D489A93289A18B500FCA08C /* DocumentPickerPractice.swift */; };
+		7D489A96289ACC8E00FCA08C /* DocumentPickerPracticeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D489A95289ACC8E00FCA08C /* DocumentPickerPracticeViewModel.swift */; };
 		7D4CB1DD27F67E7A00A03269 /* functionArchiveApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4CB1DC27F67E7A00A03269 /* functionArchiveApp.swift */; };
 		7D4CB1DF27F67E7A00A03269 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4CB1DE27F67E7A00A03269 /* ContentView.swift */; };
 		7D4CB1E127F67E7C00A03269 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D4CB1E027F67E7C00A03269 /* Assets.xcassets */; };
@@ -43,6 +47,7 @@
 		7D6A0EDF27FD730A00F3E87E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D6A0EDE27FD730A00F3E87E /* AppDelegate.swift */; };
 		7D6A0EE227FE74F300F3E87E /* PostRequestPractice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D6A0EE127FE74F300F3E87E /* PostRequestPractice.swift */; };
 		7D751FB6288E63E900AB6888 /* TopTabview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D751FB5288E63E900AB6888 /* TopTabview.swift */; };
+		7D76D94F289CA034005880B8 /* GalleryImagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D76D94E289CA034005880B8 /* GalleryImagesView.swift */; };
 		7D76FC862862E6EF00E7A1E0 /* FileUploadPractice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D76FC852862E6EF00E7A1E0 /* FileUploadPractice.swift */; };
 		7D7D1AC9284F3895003FFDE8 /* AlertBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7D1AC8284F3895003FFDE8 /* AlertBackgroundView.swift */; };
 		7D7D1ACC28506FCA003FFDE8 /* SlotDragView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7D1ACB28506FCA003FFDE8 /* SlotDragView.swift */; };
@@ -63,6 +68,10 @@
 		7D45E517280DC79A00CB97B3 /* Carousel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Carousel.swift; sourceTree = "<group>"; };
 		7D467484282F2C140054C705 /* YearMonthPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearMonthPicker.swift; sourceTree = "<group>"; };
 		7D489A872897BE0500FCA08C /* NavigateConditionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigateConditionView.swift; sourceTree = "<group>"; };
+		7D489A8E289A041E00FCA08C /* FileManagerPracticeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagerPracticeView.swift; sourceTree = "<group>"; };
+		7D489A90289A0C6400FCA08C /* FileManagerPracticeView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagerPracticeView2.swift; sourceTree = "<group>"; };
+		7D489A93289A18B500FCA08C /* DocumentPickerPractice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentPickerPractice.swift; sourceTree = "<group>"; };
+		7D489A95289ACC8E00FCA08C /* DocumentPickerPracticeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentPickerPracticeViewModel.swift; sourceTree = "<group>"; };
 		7D4CB1D927F67E7A00A03269 /* functionArchive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = functionArchive.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D4CB1DC27F67E7A00A03269 /* functionArchiveApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = functionArchiveApp.swift; sourceTree = "<group>"; };
 		7D4CB1DE27F67E7A00A03269 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -89,6 +98,8 @@
 		7D6A0EDE27FD730A00F3E87E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7D6A0EE127FE74F300F3E87E /* PostRequestPractice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostRequestPractice.swift; sourceTree = "<group>"; };
 		7D751FB5288E63E900AB6888 /* TopTabview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopTabview.swift; sourceTree = "<group>"; };
+		7D76D94D289C99B0005880B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		7D76D94E289CA034005880B8 /* GalleryImagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryImagesView.swift; sourceTree = "<group>"; };
 		7D76FC852862E6EF00E7A1E0 /* FileUploadPractice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileUploadPractice.swift; sourceTree = "<group>"; };
 		7D7D1AC8284F3895003FFDE8 /* AlertBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertBackgroundView.swift; sourceTree = "<group>"; };
 		7D7D1ACB28506FCA003FFDE8 /* SlotDragView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlotDragView.swift; sourceTree = "<group>"; };
@@ -176,6 +187,25 @@
 			path = NavigateCondition;
 			sourceTree = "<group>";
 		};
+		7D489A8D289A03E700FCA08C /* FileManagerPractice */ = {
+			isa = PBXGroup;
+			children = (
+				7D489A8E289A041E00FCA08C /* FileManagerPracticeView.swift */,
+				7D489A90289A0C6400FCA08C /* FileManagerPracticeView2.swift */,
+			);
+			path = FileManagerPractice;
+			sourceTree = "<group>";
+		};
+		7D489A92289A189900FCA08C /* DocumentPicker */ = {
+			isa = PBXGroup;
+			children = (
+				7D489A93289A18B500FCA08C /* DocumentPickerPractice.swift */,
+				7D489A95289ACC8E00FCA08C /* DocumentPickerPracticeViewModel.swift */,
+				7D76D94E289CA034005880B8 /* GalleryImagesView.swift */,
+			);
+			path = DocumentPicker;
+			sourceTree = "<group>";
+		};
 		7D4CB1D027F67E7900A03269 = {
 			isa = PBXGroup;
 			children = (
@@ -195,6 +225,7 @@
 		7D4CB1DB27F67E7A00A03269 /* functionArchive */ = {
 			isa = PBXGroup;
 			children = (
+				7D76D94D289C99B0005880B8 /* Info.plist */,
 				7D4CB1EA27F67ED100A03269 /* Presentation */,
 				7D4CB1DC27F67E7A00A03269 /* functionArchiveApp.swift */,
 				7D4CB1DE27F67E7A00A03269 /* ContentView.swift */,
@@ -218,6 +249,8 @@
 		7D4CB1EA27F67ED100A03269 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				7D489A92289A189900FCA08C /* DocumentPicker */,
+				7D489A8D289A03E700FCA08C /* FileManagerPractice */,
 				7D489A862897BDCF00FCA08C /* NavigateCondition */,
 				7D751FB4288E63C600AB6888 /* TopTabview */,
 				7D405D2B2868967B00804EEE /* BottomSheet */,
@@ -507,6 +540,7 @@
 				7D405D2D286896A100804EEE /* BottomSheetPractice.swift in Sources */,
 				7D4F6E222844535B008DF072 /* TooltipFunctionView.swift in Sources */,
 				7D66685B285844210097A524 /* FileDownloadView.swift in Sources */,
+				7D76D94F289CA034005880B8 /* GalleryImagesView.swift in Sources */,
 				7D255D392802930800EE2C1A /* SearchableListView.swift in Sources */,
 				7D602AC4283DADC700EF58EA /* AutoCompleteView.swift in Sources */,
 				7D87C644285F5EB000753A24 /* StarRatingPracticeView.swift in Sources */,
@@ -515,15 +549,19 @@
 				7D6A0EDF27FD730A00F3E87E /* AppDelegate.swift in Sources */,
 				7D6A0EC827F9E55100F3E87E /* SelectorsView.swift in Sources */,
 				7D45E516280DC10800CB97B3 /* SnapCarousel.swift in Sources */,
+				7D489A96289ACC8E00FCA08C /* DocumentPickerPracticeViewModel.swift in Sources */,
 				7D6A0EDB27FD6D1900F3E87E /* ScoreView.swift in Sources */,
 				7D467485282F2C140054C705 /* YearMonthPicker.swift in Sources */,
 				7D6A0EC027F9C30800F3E87E /* DropdownSelectorView.swift in Sources */,
+				7D489A94289A18B500FCA08C /* DocumentPickerPractice.swift in Sources */,
 				7D4CB1F327F68C2500A03269 /* FilterViewModel.swift in Sources */,
 				7D25A7B22854528D00CA18CC /* WrappingHstackPracticeView.swift in Sources */,
 				7D255D3B2802989700EE2C1A /* CompanyNameFetcher.swift in Sources */,
 				7D6A0EDD27FD72DE00F3E87E /* SceneDelegate.swift in Sources */,
 				7D33E2CF285AD20D00B2AC34 /* OpenPdfFileView.swift in Sources */,
 				7D6A0EE227FE74F300F3E87E /* PostRequestPractice.swift in Sources */,
+				7D489A8F289A041E00FCA08C /* FileManagerPracticeView.swift in Sources */,
+				7D489A91289A0C6400FCA08C /* FileManagerPracticeView2.swift in Sources */,
 				7D6A0EC627F9E35700F3E87E /* DropdownSelectorViewModel.swift in Sources */,
 				7D7D1AC9284F3895003FFDE8 /* AlertBackgroundView.swift in Sources */,
 				7D4CB1DD27F67E7A00A03269 /* functionArchiveApp.swift in Sources */,
@@ -664,6 +702,7 @@
 				DEVELOPMENT_TEAM = 5B4DDA3JD6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = functionArchive/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -693,6 +732,7 @@
 				DEVELOPMENT_TEAM = 5B4DDA3JD6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = functionArchive/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

@@ -18,3 +18,22 @@ struct NavigateConditionView_Previews: PreviewProvider {
         NavigateConditionView()
     }
 }
+
+//struct NavigationCell: View {
+//    var navigationItem: NavigationItem
+//    var body: some View {
+//        NavigationLink(destination: getDestination(from: navigationItem)) {
+//            HStack {
+//                Text(navigationItem.name)
+//            }
+//        }
+//    }
+//
+//    func getDestination(from navItem: NavigationItem) -> AnyView {
+//        if navItem.destination is ZoneList.Type {
+//            return AnyView(ZonesList())
+//        } else {
+//            return AnyView(ListStyles())
+//        }
+//    }
+//}

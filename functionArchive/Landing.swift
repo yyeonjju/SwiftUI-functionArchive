@@ -98,26 +98,45 @@ struct Landing: View {
                         
                     }
                     
-                    NavigationLink(destination : StarRatingPracticeView()){
-                        Text("Star Rating Practice")
-                    }
-                    
-                    NavigationLink(destination: FileUploadPractice()){
-                        Text("File Upload Practice")
+                    Group{
+                        NavigationLink(destination : StarRatingPracticeView()){
+                            Text("Star Rating Practice")
+                        }
+                        
+                        NavigationLink(destination: FileUploadPractice()){
+                            Text("File Upload Practice")
+                        }
+                       
+                        NavigationLink(destination: WebViewPractice()){
+                            Text("Web View Practice")
+                        }
+                        NavigationLink(destination: FileUploadPractice2()){
+                            Text("File Upload Practice2")
+                        }
+                        NavigationLink(destination: BottomSheetPractice()){
+                            Text("Bottom Sheet Practice")
+                        }
+                        NavigationLink(destination: TopTabview()){
+                            Text("Top Tabview")
+                        }
+                        
+                        NavigationLink(destination : NavigateConditionView()){
+                            Text("Navigate Condition View")
+                        }
+                        
+                        NavigationLink(destination : FileManagerPracticeView()){
+                            Text("File Manager")
+                        }
+                        
+                        NavigationLink(destination : FileManagerPracticeView2()){
+                            Text("File Manager 2")
+                        }
+                        
+                        NavigationLink(destination : DocumentPickerPractice()){
+                            Text("Document Picker")
+                        }
                     }
                    
-                    NavigationLink(destination: WebViewPractice()){
-                        Text("Web View Practice")
-                    }
-                    NavigationLink(destination: FileUploadPractice2()){
-                        Text("File Upload Practice2")
-                    }
-                    NavigationLink(destination: BottomSheetPractice()){
-                        Text("Bottom Sheet Practice")
-                    }
-                    NavigationLink(destination: TopTabview()){
-                        Text("Top Tabview")
-                    }
                 }
             }
         }
