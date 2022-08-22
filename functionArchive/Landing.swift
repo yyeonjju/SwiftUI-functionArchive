@@ -136,6 +136,11 @@ struct Landing: View {
                             Text("Document Picker")
                         }
                     }
+                    Group{
+                        NavigationLink(destination : sendbirdCallView()){
+                            Text("sendbird Call View")
+                        }
+                    }
                    
                 }
             }

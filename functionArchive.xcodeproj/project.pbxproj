@@ -53,6 +53,9 @@
 		7D7D1ACC28506FCA003FFDE8 /* SlotDragView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7D1ACB28506FCA003FFDE8 /* SlotDragView.swift */; };
 		7D87C63F285B593C00753A24 /* ScrollPracticeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D87C63E285B593C00753A24 /* ScrollPracticeView.swift */; };
 		7D87C644285F5EB000753A24 /* StarRatingPracticeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D87C643285F5EAF00753A24 /* StarRatingPracticeView.swift */; };
+		7D996A1B28B08D55002962D3 /* sendbirdCallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D996A1A28B08D55002962D3 /* sendbirdCallView.swift */; };
+		7D996A1E28B09D8F002962D3 /* SendBirdCalls in Frameworks */ = {isa = PBXBuildFile; productRef = 7D996A1D28B09D8F002962D3 /* SendBirdCalls */; };
+		7D996A2028B0A10F002962D3 /* sendbirdCallViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D996A1F28B0A10F002962D3 /* sendbirdCallViewModel.swift */; };
 		7DCA9B582823A8D10068AB11 /* DatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCA9B572823A8D10068AB11 /* DatePicker.swift */; };
 /* End PBXBuildFile section */
 
@@ -105,6 +108,8 @@
 		7D7D1ACB28506FCA003FFDE8 /* SlotDragView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlotDragView.swift; sourceTree = "<group>"; };
 		7D87C63E285B593C00753A24 /* ScrollPracticeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollPracticeView.swift; sourceTree = "<group>"; };
 		7D87C643285F5EAF00753A24 /* StarRatingPracticeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarRatingPracticeView.swift; sourceTree = "<group>"; };
+		7D996A1A28B08D55002962D3 /* sendbirdCallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sendbirdCallView.swift; sourceTree = "<group>"; };
+		7D996A1F28B0A10F002962D3 /* sendbirdCallViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sendbirdCallViewModel.swift; sourceTree = "<group>"; };
 		7DCA9B572823A8D10068AB11 /* DatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -113,6 +118,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D996A1E28B09D8F002962D3 /* SendBirdCalls in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,6 +255,7 @@
 		7D4CB1EA27F67ED100A03269 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				7D996A1928B08D1A002962D3 /* sendbirdCall */,
 				7D489A92289A189900FCA08C /* DocumentPicker */,
 				7D489A8D289A03E700FCA08C /* FileManagerPractice */,
 				7D489A862897BDCF00FCA08C /* NavigateCondition */,
@@ -446,6 +453,15 @@
 			path = StarRatingPractice;
 			sourceTree = "<group>";
 		};
+		7D996A1928B08D1A002962D3 /* sendbirdCall */ = {
+			isa = PBXGroup;
+			children = (
+				7D996A1A28B08D55002962D3 /* sendbirdCallView.swift */,
+				7D996A1F28B0A10F002962D3 /* sendbirdCallViewModel.swift */,
+			);
+			path = sendbirdCall;
+			sourceTree = "<group>";
+		};
 		7DCA9B562823A8BB0068AB11 /* DatePicker */ = {
 			isa = PBXGroup;
 			children = (
@@ -470,6 +486,9 @@
 			dependencies = (
 			);
 			name = functionArchive;
+			packageProductDependencies = (
+				7D996A1D28B09D8F002962D3 /* SendBirdCalls */,
+			);
 			productName = functionArchive;
 			productReference = 7D4CB1D927F67E7A00A03269 /* functionArchive.app */;
 			productType = "com.apple.product-type.application";
@@ -498,6 +517,9 @@
 				Base,
 			);
 			mainGroup = 7D4CB1D027F67E7900A03269;
+			packageReferences = (
+				7D996A1C28B09D8F002962D3 /* XCRemoteSwiftPackageReference "sendbird-calls-ios" */,
+			);
 			productRefGroup = 7D4CB1DA27F67E7A00A03269 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -535,6 +557,7 @@
 				7D6A0EC427F9DF9E00F3E87E /* DropdownRowView.swift in Sources */,
 				7D54C887280E94BD0047B277 /* HorizontalList.swift in Sources */,
 				7D4CB1EC27F67F8900A03269 /* Landing.swift in Sources */,
+				7D996A1B28B08D55002962D3 /* sendbirdCallView.swift in Sources */,
 				7D45E518280DC79A00CB97B3 /* Carousel.swift in Sources */,
 				7D4CB1DF27F67E7A00A03269 /* ContentView.swift in Sources */,
 				7D405D2D286896A100804EEE /* BottomSheetPractice.swift in Sources */,
@@ -551,6 +574,7 @@
 				7D45E516280DC10800CB97B3 /* SnapCarousel.swift in Sources */,
 				7D489A96289ACC8E00FCA08C /* DocumentPickerPracticeViewModel.swift in Sources */,
 				7D6A0EDB27FD6D1900F3E87E /* ScoreView.swift in Sources */,
+				7D996A2028B0A10F002962D3 /* sendbirdCallViewModel.swift in Sources */,
 				7D467485282F2C140054C705 /* YearMonthPicker.swift in Sources */,
 				7D6A0EC027F9C30800F3E87E /* DropdownSelectorView.swift in Sources */,
 				7D489A94289A18B500FCA08C /* DocumentPickerPractice.swift in Sources */,
@@ -773,6 +797,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		7D996A1C28B09D8F002962D3 /* XCRemoteSwiftPackageReference "sendbird-calls-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sendbird/sendbird-calls-ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		7D996A1D28B09D8F002962D3 /* SendBirdCalls */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7D996A1C28B09D8F002962D3 /* XCRemoteSwiftPackageReference "sendbird-calls-ios" */;
+			productName = SendBirdCalls;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 7D4CB1D127F67E7900A03269 /* Project object */;
 }
