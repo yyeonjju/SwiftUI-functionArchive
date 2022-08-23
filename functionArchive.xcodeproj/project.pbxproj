@@ -31,6 +31,7 @@
 		7D4CB1F327F68C2500A03269 /* FilterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4CB1F227F68C2500A03269 /* FilterViewModel.swift */; };
 		7D4F6E222844535B008DF072 /* TooltipFunctionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4F6E212844535B008DF072 /* TooltipFunctionView.swift */; };
 		7D54C887280E94BD0047B277 /* HorizontalList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D54C886280E94BD0047B277 /* HorizontalList.swift */; };
+		7D5E743928B35AB60014176B /* SwiftUIAppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5E743828B35AB60014176B /* SwiftUIAppState.swift */; };
 		7D602AC4283DADC700EF58EA /* AutoCompleteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D602AC3283DADC700EF58EA /* AutoCompleteView.swift */; };
 		7D6621A0286418C700F524DF /* WebViewPractice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D66219F286418C700F524DF /* WebViewPractice.swift */; };
 		7D6621AD2865540500F524DF /* FileUploadPractice2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D6621AC2865540500F524DF /* FileUploadPractice2.swift */; };
@@ -85,6 +86,7 @@
 		7D4CB1F227F68C2500A03269 /* FilterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewModel.swift; sourceTree = "<group>"; };
 		7D4F6E212844535B008DF072 /* TooltipFunctionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TooltipFunctionView.swift; sourceTree = "<group>"; };
 		7D54C886280E94BD0047B277 /* HorizontalList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalList.swift; sourceTree = "<group>"; };
+		7D5E743828B35AB60014176B /* SwiftUIAppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIAppState.swift; sourceTree = "<group>"; };
 		7D602AC3283DADC700EF58EA /* AutoCompleteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoCompleteView.swift; sourceTree = "<group>"; };
 		7D66219F286418C700F524DF /* WebViewPractice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewPractice.swift; sourceTree = "<group>"; };
 		7D6621AC2865540500F524DF /* FileUploadPractice2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileUploadPractice2.swift; sourceTree = "<group>"; };
@@ -458,6 +460,7 @@
 			children = (
 				7D996A1A28B08D55002962D3 /* sendbirdCallView.swift */,
 				7D996A1F28B0A10F002962D3 /* sendbirdCallViewModel.swift */,
+				7D5E743828B35AB60014176B /* SwiftUIAppState.swift */,
 			);
 			path = sendbirdCall;
 			sourceTree = "<group>";
@@ -559,6 +562,7 @@
 				7D4CB1EC27F67F8900A03269 /* Landing.swift in Sources */,
 				7D996A1B28B08D55002962D3 /* sendbirdCallView.swift in Sources */,
 				7D45E518280DC79A00CB97B3 /* Carousel.swift in Sources */,
+				7D5E743928B35AB60014176B /* SwiftUIAppState.swift in Sources */,
 				7D4CB1DF27F67E7A00A03269 /* ContentView.swift in Sources */,
 				7D405D2D286896A100804EEE /* BottomSheetPractice.swift in Sources */,
 				7D4F6E222844535B008DF072 /* TooltipFunctionView.swift in Sources */,
@@ -723,7 +727,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"functionArchive/Preview Content\"";
-				DEVELOPMENT_TEAM = 5B4DDA3JD6;
+				DEVELOPMENT_TEAM = MP5ZM46XG8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = functionArchive/Info.plist;
@@ -753,7 +757,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"functionArchive/Preview Content\"";
-				DEVELOPMENT_TEAM = 5B4DDA3JD6;
+				DEVELOPMENT_TEAM = MP5ZM46XG8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = functionArchive/Info.plist;

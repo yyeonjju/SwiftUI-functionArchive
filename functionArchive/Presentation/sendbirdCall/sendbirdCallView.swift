@@ -10,28 +10,39 @@ import SendBirdCalls
 import AVFoundation
 
 struct sendbirdCallView: View {
-    @StateObject var vm  : sendbirdCallViewModel = sendbirdCallViewModel()
+    @StateObject var vm  : SendbirdCallViewModel = SendbirdCallViewModel()
 //    @StateObject var callManager: CallManager = CallManager()
     @SwiftUI.State private var isPresented : Bool = false
+    @EnvironmentObject private var appState: SwiftUIAppState
+    
+    init(){
+        let params = AuthenticateParams(userId: SendbirdIds.my_sendbird_id, accessToken: SendbirdIds.my_sendbird_id)
+        
+        SendBirdCall.authenticate(with: params) { (user, error) in
+            guard let user = user, error == nil else {
+                print("error", error)
+                // Handle error.
+                return
+            }
+
+            print("🌸authenticated successfully & is connected to Sendbird server")
+            print(user)
+        }
+    }
     
     var body: some View {
         VStack{
+            Text("멘토링 디테일 페이지")
+
             Button{
-                vm.sendbirdInitAuthDial()
+//                vm.sendbirdInitAuthDial()
+                if(UserRole.userType == "mentor"){
+                    vm.dial()
+                }
                 self.isPresented = true
-//                func checkCameraPermission(){
-//                   AVCaptureDevice.requestAccess(for: .video, completionHandler: { (granted: Bool) in
-//                       if granted {
-//                           print("Camera: 권한 허용")
-//
-//                       } else {
-//                           print("Camera: 권한 거부")
-//                       }
-//                   })
-//                }
                
             }label : {
-                Text("멘토링 참가하기")
+                Text("멘토링 참가하기 버튼 ")
             }
         }
         .onChange(of: vm.currentCall){ call in
@@ -44,64 +55,88 @@ struct sendbirdCallView: View {
             }
             
         }
+        .onChange(of: vm.callState){callState in
+            print("🌸🌸🌸🌸callState🌸🌸🌸🌸")
+            print(callState.rawValue)
+            
+        }
+        .onChange(of: appState.onRinging){ ringing in
+            print("🌸🌸🌸🌸onRinging🌸🌸🌸🌸")
+            print(ringing)
+        }
         .fullScreenCover(isPresented: self.$isPresented){
             ZStack{
                 Color.gray
                     .edgesIgnoringSafeArea(.all)
                 
                 VStack{
-//                    Text("fullScreenCover")
-                    HStack{
+
+//                    HStack{
                         Button{
                             self.isPresented = false
                         } label : {
                             Text("닫기")
                         }
-                        
-                        Button{
-                            vm.currentCall?.stopVideo()
-                        } label : {
-                            Text("화면 안보이게")
-                        }
-                        
-                        Button{
-                            print(vm.currentCall?.isLocalVideoEnabled)
-                        } label : {
-                            Text("지금 화면 상태는???")
-                        }
-                        
-                    }
+//
+//                        Button{
+//                            vm.currentCall?.stopVideo()
+//                        } label : {
+//                            Text("화면 안보이게")
+//                        }
+//
+//                        Button{
+//                            print(vm.currentCall?.isLocalVideoEnabled)
+//                        } label : {
+//                            Text("지금 화면 상태는???")
+//                        }
+//
+//                    }
 
                     
                     VStack{
-//                        Text("local video")
-//                            .frame( maxWidth: .infinity, maxHeight: .infinity)
-//                            .background(Color.blue)
-                        VideoView(call: vm.currentCall, type: .local)
+                        VideoView(call: vm.currentCall, type: .remote)
                             .ignoresSafeArea()
                        
                     }
                     .overlay(alignment : .topLeading){
-//                        Text("remote video")
-//                        .frame(width: 120, height: 190)
-//                        .background(Color.brown)
-//                        .padding(15)
-                        
-                        VideoView(call: vm.currentCall, type: .remote)
+                        VideoView(call: vm.currentCall, type: .local)
                                .frame(width: 120, height: 190)
                                .padding(15)
-
-                        
-                          
+                    
                     }
-                    
-                    
-                    
-                        
+                    .overlay(alignment : .bottom){
+                        if vm.callState != .none {
+                            VStack{
+                                Text(vm.currentCall?.callId ?? "Failed call")
+                                
+                                HStack{
+                                    Text(vm.callState.rawValue)
+                                    
+                                    Button(action: vm.end) {
+                                        endStyleBody
+                                    }
+                                }
+                            }
+                          
+                        }
+                      
+                    }
+       
                 }
             }
 
         }
+    }
+    
+    var endStyleBody: some View {
+        Color
+            .red
+            .frame(width: 30, height: 30)
+            .cornerRadius(26)
+            .overlay(
+                Image(systemName: "phone.down.fill")
+                    .foregroundColor(.white)
+            )
     }
 }
 
@@ -135,3 +170,5 @@ struct VideoView: UIViewRepresentable {
         }
     }
 }
+
+
