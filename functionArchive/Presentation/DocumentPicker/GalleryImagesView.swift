@@ -75,7 +75,7 @@ struct GalleryImagesView : View {
         }
         .onAppear {
 
-            PHPhotoLibrary.requestAuthorization { (status) in
+            PHPhotoLibrary.requestAuthorization { (status) in // 사용자가 갤러리에 접근 권한을 허용했다면
                 print("🍑status🍑")
                 print(status)
                 if status == .authorized{
@@ -91,24 +91,30 @@ struct GalleryImagesView : View {
         }
     }
     
-    func getAllImages(){
+    func getAllImages(){ //PHFetchOptions(), PHAsset, PHImageRequestOptions, PHCachingImageManager
         let opt = PHFetchOptions()
-        opt.includeHiddenAssets = false
-        
-        let req = PHAsset.fetchAssets(with: .image, options: .none)
+        opt.fetchLimit = self.imageLimit
+//        opt.includeHiddenAssets = true
+        opt.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: false)]
 
-        print(req)
+//        let req = PHAsset.fetchAssets(with: .image, options: .none)
+        let req = PHAsset.fetchAssets(with: opt)
+
+        print("🍑🍑🍑req🍑🍑🍑", req)
         DispatchQueue.global(qos: .background).async {
-            
+
            let options = PHImageRequestOptions()
+            print("🍑🍑🍑options🍑🍑🍑", options)
            options.isSynchronous = true
-                
+
         // New Method For Generating Grid Without Refreshing....
-            
+
             //🍑🍑🍑2222🍑🍑🍑
             for i in 0..<self.imageLimit {
                 PHCachingImageManager.default().requestImage(for: req[i], targetSize: CGSize(width: 150, height: 150), contentMode: .default, options: options) { (image, _) in
 
+                    print("🍑🍑🍑image🍑🍑🍑", image)
+                    
                     if let image = image{
                         let data1 = Images(image: image, selected: false, asset: req[i])
 
@@ -119,7 +125,44 @@ struct GalleryImagesView : View {
             }
         }
     }
+    
+//    func getAllImages(){
+//
+//        let fetchOption = PHFetchOptions()
+//        fetchOption.fetchLimit = 1
+//        fetchOption.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: false)]
+//        let fetchPhotos = PHAsset.fetchAssets(with: fetchOption)
+//        if let photo = fetchPhotos.firstObject {
+//            DispatchQueue.main.async {
+//
+//                ImageManager.shared.requestImage(from: photo, thumnailSize:  CGSize(width: 50, height: 50)) { image in
+//                    if let image = image{
+//                        print("가져온 한 장의 이미지로 (image 파라미터) 하고싶은 행동")
+//                        self.images.append(image)
+//    //                // 가져온 이미지로 (image 파라미터) 하고싶은 행동
+//                    }
+//
+//                }
+//           }
+//        } else {
+//            print("가져올 한 장의 사진이 없음????")
+//            // 사진이 없을 때, 디폴트 이미지 지정
+////            self.galleryButton.setImage(UIImage(named: ImageKey.noGallery), for: .normal)
+//        }
+//    }
 }
+
+//class ImageManager {
+//    static let shared = ImageManager()
+//
+//    private let imageManager = PHImageManager()
+//
+//    func requestImage(from asset: PHAsset, thumnailSize: CGSize, completion: @escaping (UIImage?) -> Void) {
+//        self.imageManager.requestImage(for: asset, targetSize: thumnailSize, contentMode: .aspectFill, options: nil) { image, info in
+//            completion(image)
+//        }
+//    }
+//}
 
 struct ImageCard : View {
     

@@ -141,13 +141,14 @@ struct DocumentPickerPractice: View {
                     selectedImage: Binding(
                         get: {UIImage()},
                         set: {
-//                            self.userImage = $0
+                            self.selecedRecentImage = $0
                             isPresented = false
   
-                            if let data = $0.jpegData(compressionQuality: 0.1) {
-                                let fileURL = getDocumentsDirectory().appendingPathComponent("copy.jpg")
-                                vm.uploadFile(fileUrl: fileURL, fileName: "galleryImage.jpg")
-                            }
+//                            if let data = $0.jpegData(compressionQuality: 0.1) {
+//                                let fileURL = getDocumentsDirectory().appendingPathComponent("copy.jpg")
+//                                vm.uploadFile(fileUrl: fileURL, fileName: "galleryImage.jpg")
+//                            }
+//                            vm.uploadImage(selectedImage: image!)
 
                         }
                     ),
@@ -165,10 +166,11 @@ struct DocumentPickerPractice: View {
             if(image != nil){
                 isPresented = false
                 
-                if let data = image!.jpegData(compressionQuality: 0.1) {
-                    let fileURL = getDocumentsDirectory().appendingPathComponent("copy.jpg")
-                    vm.uploadFile(fileUrl: fileURL, fileName: "galleryImage.jpg")
-                }
+//                if let data = image!.jpegData(compressionQuality: 0.1) {
+//                    let fileURL = getDocumentsDirectory().appendingPathComponent("copy.jpg")
+//                    vm.uploadFile(fileUrl: fileURL, fileName: "galleryImage.jpg")
+//                }
+                vm.uploadImage(selectedImage: image!)
             }
         }
         
