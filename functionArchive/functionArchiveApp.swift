@@ -7,6 +7,7 @@
 
 import SwiftUI
 import SendBirdCalls
+import Foundation
 
 @main
 struct functionArchiveApp: App {
@@ -24,5 +25,17 @@ struct functionArchiveApp: App {
         print( "🌸🌸🌸🌸🌸🌸SendBirdCall.configure")
         let appId: String = SendbirdIds.application_id
         SendBirdCall.configure(appId: appId)
+    }
+}
+
+public extension UserDefaults {
+    var remotePushToken: Data? {
+        get { UserDefaults.standard.value(forKey: "com.sendbird.examples.pushtoken") as? Data }
+        set { UserDefaults.standard.set(newValue, forKey: "com.sendbird.examples.pushtoken") }
+    }
+    
+    var voipPushToken: Data? {
+        get { UserDefaults.standard.value(forKey: "com.sendbird.examples.voippushtoken") as? Data }
+        set { UserDefaults.standard.set(newValue, forKey: "com.sendbird.examples.voippushtoken") }
     }
 }

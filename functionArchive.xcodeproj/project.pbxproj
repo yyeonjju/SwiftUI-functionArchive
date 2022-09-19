@@ -57,6 +57,8 @@
 		7D996A1B28B08D55002962D3 /* sendbirdCallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D996A1A28B08D55002962D3 /* sendbirdCallView.swift */; };
 		7D996A1E28B09D8F002962D3 /* SendBirdCalls in Frameworks */ = {isa = PBXBuildFile; productRef = 7D996A1D28B09D8F002962D3 /* SendBirdCalls */; };
 		7D996A2028B0A10F002962D3 /* sendbirdCallViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D996A1F28B0A10F002962D3 /* sendbirdCallViewModel.swift */; };
+		7DC8740028B53194003C171D /* CXCallManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC873FF28B53194003C171D /* CXCallManager.swift */; };
+		7DC8740228B53233003C171D /* CXProvider+QuickStart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC8740128B53233003C171D /* CXProvider+QuickStart.swift */; };
 		7DCA9B582823A8D10068AB11 /* DatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCA9B572823A8D10068AB11 /* DatePicker.swift */; };
 /* End PBXBuildFile section */
 
@@ -112,6 +114,10 @@
 		7D87C643285F5EAF00753A24 /* StarRatingPracticeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarRatingPracticeView.swift; sourceTree = "<group>"; };
 		7D996A1A28B08D55002962D3 /* sendbirdCallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sendbirdCallView.swift; sourceTree = "<group>"; };
 		7D996A1F28B0A10F002962D3 /* sendbirdCallViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sendbirdCallViewModel.swift; sourceTree = "<group>"; };
+		7DC873FF28B53194003C171D /* CXCallManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CXCallManager.swift; sourceTree = "<group>"; };
+		7DC8740128B53233003C171D /* CXProvider+QuickStart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CXProvider+QuickStart.swift"; sourceTree = "<group>"; };
+		7DC8740328B535AF003C171D /* VoIPNotifications.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = VoIPNotifications.entitlements; sourceTree = "<group>"; };
+		7DC8740428B5376B003C171D /* functionArchive.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = functionArchive.entitlements; sourceTree = "<group>"; };
 		7DCA9B572823A8D10068AB11 /* DatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -233,6 +239,7 @@
 		7D4CB1DB27F67E7A00A03269 /* functionArchive */ = {
 			isa = PBXGroup;
 			children = (
+				7DC8740428B5376B003C171D /* functionArchive.entitlements */,
 				7D76D94D289C99B0005880B8 /* Info.plist */,
 				7D4CB1EA27F67ED100A03269 /* Presentation */,
 				7D4CB1DC27F67E7A00A03269 /* functionArchiveApp.swift */,
@@ -458,9 +465,12 @@
 		7D996A1928B08D1A002962D3 /* sendbirdCall */ = {
 			isa = PBXGroup;
 			children = (
+				7DC8740328B535AF003C171D /* VoIPNotifications.entitlements */,
 				7D996A1A28B08D55002962D3 /* sendbirdCallView.swift */,
 				7D996A1F28B0A10F002962D3 /* sendbirdCallViewModel.swift */,
 				7D5E743828B35AB60014176B /* SwiftUIAppState.swift */,
+				7DC873FF28B53194003C171D /* CXCallManager.swift */,
+				7DC8740128B53233003C171D /* CXProvider+QuickStart.swift */,
 			);
 			path = sendbirdCall;
 			sourceTree = "<group>";
@@ -568,6 +578,7 @@
 				7D4F6E222844535B008DF072 /* TooltipFunctionView.swift in Sources */,
 				7D66685B285844210097A524 /* FileDownloadView.swift in Sources */,
 				7D76D94F289CA034005880B8 /* GalleryImagesView.swift in Sources */,
+				7DC8740028B53194003C171D /* CXCallManager.swift in Sources */,
 				7D255D392802930800EE2C1A /* SearchableListView.swift in Sources */,
 				7D602AC4283DADC700EF58EA /* AutoCompleteView.swift in Sources */,
 				7D87C644285F5EB000753A24 /* StarRatingPracticeView.swift in Sources */,
@@ -588,6 +599,7 @@
 				7D6A0EDD27FD72DE00F3E87E /* SceneDelegate.swift in Sources */,
 				7D33E2CF285AD20D00B2AC34 /* OpenPdfFileView.swift in Sources */,
 				7D6A0EE227FE74F300F3E87E /* PostRequestPractice.swift in Sources */,
+				7DC8740228B53233003C171D /* CXProvider+QuickStart.swift in Sources */,
 				7D489A8F289A041E00FCA08C /* FileManagerPracticeView.swift in Sources */,
 				7D489A91289A0C6400FCA08C /* FileManagerPracticeView2.swift in Sources */,
 				7D6A0EC627F9E35700F3E87E /* DropdownSelectorViewModel.swift in Sources */,
@@ -724,6 +736,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = functionArchive/functionArchive.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"functionArchive/Preview Content\"";
@@ -731,6 +744,8 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = functionArchive/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -754,6 +769,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = functionArchive/functionArchive.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"functionArchive/Preview Content\"";
@@ -761,6 +777,8 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = functionArchive/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

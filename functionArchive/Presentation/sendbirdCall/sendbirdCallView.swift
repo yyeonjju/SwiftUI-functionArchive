@@ -27,6 +27,7 @@ struct sendbirdCallView: View {
 
             print("🌸authenticated successfully & is connected to Sendbird server")
             print(user)
+            SendBirdCall.registerVoIPPush(token: UserDefaults.standard.voipPushToken, completionHandler: nil)
         }
     }
     
