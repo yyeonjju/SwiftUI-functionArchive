@@ -196,14 +196,14 @@ class BottomSheetPracticeViewModel : ObservableObject {
                     self.selectedTopics.append(key)
                 }
                 
-//                for k in self.selectedTopics{
-//                    if(k != key) {
-//                        self.selectedTopics.filter{topic in topic != k}
-//                    } else {
-//                        self.selectedTopics.append(key)
-//                    }
-//
-//                }
+                //                for k in self.selectedTopics{
+                //                    if(k != key) {
+                //                        self.selectedTopics.filter{topic in topic != k}
+                //                    } else {
+                //                        self.selectedTopics.append(key)
+                //                    }
+                //
+                //                }
             }
         )
     }
@@ -214,12 +214,12 @@ struct BottomSheetPractice: View {
     @StateObject var vm : BottomSheetPracticeViewModel = BottomSheetPracticeViewModel()
     @State private var isOpen : Bool = false
     let singleTextHeight : CGFloat = 53
-//    let rowHeight = 56
-//    let array = ["1", "2", "3", "4", "5", "6", "7", "8"]
+    //    let rowHeight = 56
+    //    let array = ["1", "2", "3", "4", "5", "6", "7", "8"]
     var body: some View{
         ZStack{
             //⭐️⭐️첫번째 방법⭐️⭐️
-//            BottomSheetView(isOpen: $isOpen, maxHeight: singleTextHeight*CGFloat(mentoringTags.count)+20) {
+            //            BottomSheetView(isOpen: $isOpen, maxHeight: singleTextHeight*CGFloat(mentoringTags.count)+20) {
             BottomSheetView(isOpen: $isOpen, maxHeight: 470) {
                 VStack(alignment: .leading, spacing: 0){
                     ScrollView{
@@ -237,7 +237,7 @@ struct BottomSheetPractice: View {
                                         Image(systemName:  "checkmark.circle.fill")
                                             .font(.system(size: 20))
                                             .foregroundColor(vm.selectedTopics.contains(el) ? .green : .gray)
-                                            
+                                        
                                         Text(el)
                                             .foregroundColor(.black)
                                         Spacer()
@@ -246,11 +246,11 @@ struct BottomSheetPractice: View {
                                 }
                                 Spacer()
                                 Divider()
-    //                                .padding(.horizontal)
+                                //                                .padding(.horizontal)
                                 
                             }
                             .frame(height: singleTextHeight)
-
+                            
                         }
                     }
                     HStack{
@@ -261,33 +261,54 @@ struct BottomSheetPractice: View {
                             .cornerRadius(10)
                     }
                     .padding()
-
+                    
                 }
             }
             .edgesIgnoringSafeArea(.all)
             
             
-            //⭐️⭐️두 번째 방법⭐️⭐️
-//            Text("확인")
-//                .onTapGesture{
-//                    print(vm.selectedTopics)
-//                }
             
-//            BottomSheetView(isOpen: $isOpen, maxHeight: singleTextHeight*CGFloat(mentoringTags.count)) {
-//                VStack{
-//                    ForEach(mentoringTags.map{$0.label}, id : \.self){el in
-//                        HStack{
-//                            Toggle(el, isOn: vm.binding(for:el))
-//                                .toggleStyle(CheckboxToggleStyle(style: .circle, toggleDirection: .left, space : false, showDivider: true))
-//                                .foregroundColor(.green)
-//                            Spacer()
-//                        }
-//
-//                    }
-//                }
-//            }.edgesIgnoringSafeArea(.all)
+            //⭐️⭐️두 번째 방법⭐️⭐️
+            //            Text("확인")
+            //                .onTapGesture{
+            //                    print(vm.selectedTopics)
+            //                }
+            //
+            //            BottomSheetView(isOpen: $isOpen, maxHeight: singleTextHeight*CGFloat(mentoringTags.count)) {
+            //                VStack{
+            //                    ForEach(mentoringTags.map{$0.label}, id : \.self){el in
+            //                        HStack{
+            //                            Toggle(el, isOn: vm.binding(for:el))
+            //                                .toggleStyle(CheckboxToggleStyle(style: .circle, toggleDirection: .left, space : false, showDivider: true))
+            //                                .foregroundColor(.green)
+            //                            Spacer()
+            //                        }
+            //
+            //                    }
+            //                }
+            //            }.edgesIgnoringSafeArea(.all)
+            
+            
+            /*
+             BottomSheetView(isOpen: $isOpen, maxHeight: 470) {
+             VStack{
+             ScrollView{
+             ForEach(mentoringTags.map{$0.label}, id : \.self){el in
+             HStack{
+             Toggle(el, isOn: vm.binding(for:el))
+             .toggleStyle(CheckboxToggleStyle(style: .circle, toggleDirection: .left, space : false, showDivider: true))
+             .foregroundColor(.green)
+             Spacer()
+             }
+             
+             }
+             }
+             
+             }
+             }.edgesIgnoringSafeArea(.all)
+             */
         }
-
+        
     }
 }
 
@@ -346,9 +367,9 @@ struct BottomSheetView<Content: View>: View {
             .animation(.interactiveSpring())
             .gesture(
                 DragGesture().updating(self.$translation) { value, state, _ in
-//                    print("🍑🍑")
-//                    print(value)
-//                    print(state)
+                    //                    print("🍑🍑")
+                    //                    print(value)
+                    //                    print(state)
                     state = value.translation.height
                 }.onEnded { value in
                     let snapDistance = self.maxHeight * Constants.snapRatio
@@ -365,56 +386,132 @@ struct BottomSheetView<Content: View>: View {
 
 
 //⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️
+//struct CheckboxToggleStyle: ToggleStyle {
+//    @Environment(\.isEnabled) var isEnabled
+//    let style: Style // custom param
+//    var toggleDirection : Direction = .right
+//    var space : Bool = true
+//    var showDivider : Bool = false
+//
+//    func makeBody(configuration: Configuration) -> some View {
+//        Button(action: {
+//            configuration.isOn.toggle() // toggle the state binding
+//        }, label: {
+//            VStack(alignment: .leading, spacing: 0){
+//                HStack {
+//                    if(toggleDirection == .left){
+//                        Image(systemName: configuration.isOn ? "checkmark.\(style.sfSymbolName).fill" : style.sfSymbolName)
+//                            .imageScale(.large)
+//                    }
+//
+//                    configuration.label
+//                        .foregroundColor(.black)
+//                    if space {
+//                        Spacer()
+//                    }
+//
+//                    if(toggleDirection == .right){
+//                        Image(systemName: configuration.isOn ? "checkmark.\(style.sfSymbolName).fill" : style.sfSymbolName)
+//                            .imageScale(.large)
+//                    }
+//
+//
+//                }
+//                .padding(5)
+//
+//                if(showDivider){
+//                    Divider()
+//                        .padding(.horizontal)
+//
+//                }
+//
+//            }
+//
+//
+//        })
+//            .buttonStyle(PlainButtonStyle())
+//            .disabled(!isEnabled)
+//    }
+//
+//    enum Style {
+//        case square, circle
+//
+//        var sfSymbolName: String {
+//            switch self {
+//            case .square:
+//                return "square"
+//            case .circle:
+//                return "circle"
+//            }
+//        }
+//    }
+//    enum Direction {
+//        case right, left
+//    }
+//}
+
+
+//struct CheckboxToggleStyle: ToggleStyle {
+//    @Environment(\.isEnabled) var isEnabled
+//    let style: Style // custom param
+//
+//    func makeBody(configuration: Configuration) -> some View {
+//        Button(action: {
+//            configuration.isOn.toggle() // toggle the state binding
+//        }, label: {
+//            VStack(alignment: .leading, spacing: 0){
+//                HStack {
+//                    Image(systemName: configuration.isOn ? "checkmark.\(style.sfSymbolName).fill" : style.sfSymbolName)
+//                        .imageScale(.large)
+//
+//                    configuration.label
+//                        .foregroundColor(.black)
+//                }
+//                .padding(5)
+//            }
+//        })
+//            .buttonStyle(PlainButtonStyle())
+//            .disabled(!isEnabled)
+//    }
+//
+//    enum Style {
+//        case square, circle
+//
+//        var sfSymbolName: String {
+//            switch self {
+//            case .square:
+//                return "square"
+//            case .circle:
+//                return "circle"
+//            }
+//        }
+//    }
+//
+//}
+
 struct CheckboxToggleStyle: ToggleStyle {
-    @Environment(\.isEnabled) var isEnabled
-    let style: Style // custom param
-    var toggleDirection : Direction = .right
-    var space : Bool = true
-    var showDivider : Bool = false
+    let style: Style
     
     func makeBody(configuration: Configuration) -> some View {
         Button(action: {
-            configuration.isOn.toggle() // toggle the state binding
+            configuration.isOn.toggle()
         }, label: {
             VStack(alignment: .leading, spacing: 0){
                 HStack {
-                    if(toggleDirection == .left){
-                        Image(systemName: configuration.isOn ? "checkmark.\(style.sfSymbolName).fill" : style.sfSymbolName)
-                            .imageScale(.large)
-                    }
+                    Image(systemName: configuration.isOn ? "checkmark.\(style.sfSymbolName).fill" : style.sfSymbolName)
+                        .imageScale(.large)
                     
                     configuration.label
                         .foregroundColor(.black)
-                    if space {
-                        Spacer()
-                    }
-                    
-                    if(toggleDirection == .right){
-                        Image(systemName: configuration.isOn ? "checkmark.\(style.sfSymbolName).fill" : style.sfSymbolName)
-                            .imageScale(.large)
-                    }
-                    
-                    
                 }
                 .padding(5)
-                
-                if(showDivider){
-                    Divider()
-                        .padding(.horizontal)
-
-                }
-                
             }
-            
-            
         })
-            .buttonStyle(PlainButtonStyle())
-            .disabled(!isEnabled)
     }
     
     enum Style {
         case square, circle
-        
+
         var sfSymbolName: String {
             switch self {
             case .square:
@@ -424,8 +521,5 @@ struct CheckboxToggleStyle: ToggleStyle {
             }
         }
     }
-    enum Direction {
-        case right, left
-    }
+    
 }
-

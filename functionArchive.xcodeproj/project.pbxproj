@@ -54,6 +54,12 @@
 		7D7D1ACC28506FCA003FFDE8 /* SlotDragView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7D1ACB28506FCA003FFDE8 /* SlotDragView.swift */; };
 		7D87C63F285B593C00753A24 /* ScrollPracticeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D87C63E285B593C00753A24 /* ScrollPracticeView.swift */; };
 		7D87C644285F5EB000753A24 /* StarRatingPracticeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D87C643285F5EAF00753A24 /* StarRatingPracticeView.swift */; };
+		7D8AB6A92A275CE200051A62 /* Modifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D8AB6A82A275CE200051A62 /* Modifier.swift */; };
+		7D8AB6AB2A275DC000051A62 /* CustomViewModifierView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D8AB6AA2A275DC000051A62 /* CustomViewModifierView.swift */; };
+		7D8AB6AE2A29E14500051A62 /* ViewBuilderPracticeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D8AB6AD2A29E14500051A62 /* ViewBuilderPracticeView.swift */; };
+		7D8AB6B12A2AEA3B00051A62 /* ToggleStylePracticeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D8AB6B02A2AEA3B00051A62 /* ToggleStylePracticeView.swift */; };
+		7D8AB6B42A2DE41F00051A62 /* UIVIewRepresentablePracticeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D8AB6B32A2DE41F00051A62 /* UIVIewRepresentablePracticeView.swift */; };
+		7D8AB6B62A2F027100051A62 /* CustomPickerTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D8AB6B52A2F027100051A62 /* CustomPickerTextField.swift */; };
 		7D996A1B28B08D55002962D3 /* sendbirdCallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D996A1A28B08D55002962D3 /* sendbirdCallView.swift */; };
 		7D996A1E28B09D8F002962D3 /* SendBirdCalls in Frameworks */ = {isa = PBXBuildFile; productRef = 7D996A1D28B09D8F002962D3 /* SendBirdCalls */; };
 		7D996A2028B0A10F002962D3 /* sendbirdCallViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D996A1F28B0A10F002962D3 /* sendbirdCallViewModel.swift */; };
@@ -112,6 +118,12 @@
 		7D7D1ACB28506FCA003FFDE8 /* SlotDragView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlotDragView.swift; sourceTree = "<group>"; };
 		7D87C63E285B593C00753A24 /* ScrollPracticeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollPracticeView.swift; sourceTree = "<group>"; };
 		7D87C643285F5EAF00753A24 /* StarRatingPracticeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarRatingPracticeView.swift; sourceTree = "<group>"; };
+		7D8AB6A82A275CE200051A62 /* Modifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modifier.swift; sourceTree = "<group>"; };
+		7D8AB6AA2A275DC000051A62 /* CustomViewModifierView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewModifierView.swift; sourceTree = "<group>"; };
+		7D8AB6AD2A29E14500051A62 /* ViewBuilderPracticeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewBuilderPracticeView.swift; sourceTree = "<group>"; };
+		7D8AB6B02A2AEA3B00051A62 /* ToggleStylePracticeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleStylePracticeView.swift; sourceTree = "<group>"; };
+		7D8AB6B32A2DE41F00051A62 /* UIVIewRepresentablePracticeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIVIewRepresentablePracticeView.swift; sourceTree = "<group>"; };
+		7D8AB6B52A2F027100051A62 /* CustomPickerTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPickerTextField.swift; sourceTree = "<group>"; };
 		7D996A1A28B08D55002962D3 /* sendbirdCallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sendbirdCallView.swift; sourceTree = "<group>"; };
 		7D996A1F28B0A10F002962D3 /* sendbirdCallViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sendbirdCallViewModel.swift; sourceTree = "<group>"; };
 		7DC873FF28B53194003C171D /* CXCallManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CXCallManager.swift; sourceTree = "<group>"; };
@@ -264,6 +276,10 @@
 		7D4CB1EA27F67ED100A03269 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				7D8AB6B22A2DE3F200051A62 /* UIViewRepresentablePractice */,
+				7D8AB6AF2A2AEA0400051A62 /* ToggleStylePractice */,
+				7D8AB6AC2A29E11800051A62 /* VewBuilderPractice */,
+				7D8AB6A72A275C9B00051A62 /* CustomViewModifier */,
 				7D996A1928B08D1A002962D3 /* sendbirdCall */,
 				7D489A92289A189900FCA08C /* DocumentPicker */,
 				7D489A8D289A03E700FCA08C /* FileManagerPractice */,
@@ -462,6 +478,40 @@
 			path = StarRatingPractice;
 			sourceTree = "<group>";
 		};
+		7D8AB6A72A275C9B00051A62 /* CustomViewModifier */ = {
+			isa = PBXGroup;
+			children = (
+				7D8AB6A82A275CE200051A62 /* Modifier.swift */,
+				7D8AB6AA2A275DC000051A62 /* CustomViewModifierView.swift */,
+			);
+			path = CustomViewModifier;
+			sourceTree = "<group>";
+		};
+		7D8AB6AC2A29E11800051A62 /* VewBuilderPractice */ = {
+			isa = PBXGroup;
+			children = (
+				7D8AB6AD2A29E14500051A62 /* ViewBuilderPracticeView.swift */,
+			);
+			path = VewBuilderPractice;
+			sourceTree = "<group>";
+		};
+		7D8AB6AF2A2AEA0400051A62 /* ToggleStylePractice */ = {
+			isa = PBXGroup;
+			children = (
+				7D8AB6B02A2AEA3B00051A62 /* ToggleStylePracticeView.swift */,
+			);
+			path = ToggleStylePractice;
+			sourceTree = "<group>";
+		};
+		7D8AB6B22A2DE3F200051A62 /* UIViewRepresentablePractice */ = {
+			isa = PBXGroup;
+			children = (
+				7D8AB6B32A2DE41F00051A62 /* UIVIewRepresentablePracticeView.swift */,
+				7D8AB6B52A2F027100051A62 /* CustomPickerTextField.swift */,
+			);
+			path = UIViewRepresentablePractice;
+			sourceTree = "<group>";
+		};
 		7D996A1928B08D1A002962D3 /* sendbirdCall */ = {
 			isa = PBXGroup;
 			children = (
@@ -561,6 +611,7 @@
 			files = (
 				7D6621A0286418C700F524DF /* WebViewPractice.swift in Sources */,
 				7D6621AD2865540500F524DF /* FileUploadPractice2.swift in Sources */,
+				7D8AB6A92A275CE200051A62 /* Modifier.swift in Sources */,
 				7D6668542855BCD90097A524 /* ModalPracticeView.swift in Sources */,
 				7D87C63F285B593C00753A24 /* ScrollPracticeView.swift in Sources */,
 				7D76FC862862E6EF00E7A1E0 /* FileUploadPractice.swift in Sources */,
@@ -590,19 +641,24 @@
 				7D489A96289ACC8E00FCA08C /* DocumentPickerPracticeViewModel.swift in Sources */,
 				7D6A0EDB27FD6D1900F3E87E /* ScoreView.swift in Sources */,
 				7D996A2028B0A10F002962D3 /* sendbirdCallViewModel.swift in Sources */,
+				7D8AB6B62A2F027100051A62 /* CustomPickerTextField.swift in Sources */,
 				7D467485282F2C140054C705 /* YearMonthPicker.swift in Sources */,
+				7D8AB6B42A2DE41F00051A62 /* UIVIewRepresentablePracticeView.swift in Sources */,
 				7D6A0EC027F9C30800F3E87E /* DropdownSelectorView.swift in Sources */,
 				7D489A94289A18B500FCA08C /* DocumentPickerPractice.swift in Sources */,
 				7D4CB1F327F68C2500A03269 /* FilterViewModel.swift in Sources */,
 				7D25A7B22854528D00CA18CC /* WrappingHstackPracticeView.swift in Sources */,
 				7D255D3B2802989700EE2C1A /* CompanyNameFetcher.swift in Sources */,
 				7D6A0EDD27FD72DE00F3E87E /* SceneDelegate.swift in Sources */,
+				7D8AB6B12A2AEA3B00051A62 /* ToggleStylePracticeView.swift in Sources */,
+				7D8AB6AB2A275DC000051A62 /* CustomViewModifierView.swift in Sources */,
 				7D33E2CF285AD20D00B2AC34 /* OpenPdfFileView.swift in Sources */,
 				7D6A0EE227FE74F300F3E87E /* PostRequestPractice.swift in Sources */,
 				7DC8740228B53233003C171D /* CXProvider+QuickStart.swift in Sources */,
 				7D489A8F289A041E00FCA08C /* FileManagerPracticeView.swift in Sources */,
 				7D489A91289A0C6400FCA08C /* FileManagerPracticeView2.swift in Sources */,
 				7D6A0EC627F9E35700F3E87E /* DropdownSelectorViewModel.swift in Sources */,
+				7D8AB6AE2A29E14500051A62 /* ViewBuilderPracticeView.swift in Sources */,
 				7D7D1AC9284F3895003FFDE8 /* AlertBackgroundView.swift in Sources */,
 				7D4CB1DD27F67E7A00A03269 /* functionArchiveApp.swift in Sources */,
 				7D6A0EC227F9DAAD00F3E87E /* DropdownView.swift in Sources */,

@@ -8,12 +8,12 @@
 import Foundation
 import SwiftUI
 
-struct SearchableListView: View {
+struct SearchableListView: View {//
     //🌸 searchable에 쓰이는 SearchableListViewModel 전역으로 설정해주기
     //🌸앱 들어왔을 때 한번 fetch 해서 받아주고 나중에 어디서든 쓰일 수 있게 하기 위해서
     //🌸 @EnvironmentObject 로 view에서 데이터 쓸 수 있게 받아주기
-    @EnvironmentObject var searchableListViewModel : SearchableListViewModel
-    //        @StateObject var viewModel = SearchableListViewModel()
+//    @EnvironmentObject var searchableListViewModel : SearchableListViewModel
+    @StateObject var searchableListViewModel = SearchableListViewModel()
     @State var searchText = ""
     
     var body: some View {

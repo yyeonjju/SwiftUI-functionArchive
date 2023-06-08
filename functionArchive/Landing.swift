@@ -141,6 +141,25 @@ struct Landing: View {
                             Text("sendbird Call View")
                         }
                     }
+                    
+                    //블로그 쓰기위한 코드
+                    Group{
+                        NavigationLink(destination : CustomViewModifierView()){
+                            Text("CustomViewModifier")
+                        }
+                        
+                        NavigationLink(destination : ViewBuilderPracticeView()){
+                            Text("@ViewBuilder")
+                        }
+                        
+                        NavigationLink(destination : ToggleStylePracticeView()){
+                            Text("ToggleStyle")
+                        }
+                        
+                        NavigationLink(destination : UIVIewRepresentablePracticeView()){
+                            Text("UIVIewRepresentablePracticeView")
+                        }
+                    }
                    
                 }
             }
