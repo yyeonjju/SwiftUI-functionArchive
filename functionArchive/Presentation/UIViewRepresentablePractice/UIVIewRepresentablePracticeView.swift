@@ -12,18 +12,16 @@ struct UIVIewRepresentablePracticeView: View {
     @State var picked : String = ""
     
     var body: some View {
-        
-        VStack {
-            
-            VStack{
+        VStack{
             CustomPickerTextField(
-            dataArrays :[
-            Array(0...100).map{String($0)}
-//            ["자", "축", "인", "묘","진","사","오","미","신", "유", "술", "해"]
-            ],
-            bindingString: self.$picked
+                dataArrays :Array(0...100).map{String($0)},
+                bindingString: self.$picked
             )
-            }
+            
+            Text("@State 확인")
+                .onTapGesture {
+                    print("@State var picked : ", picked)
+                }
         }
         .padding()
         

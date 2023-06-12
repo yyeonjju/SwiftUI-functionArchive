@@ -154,13 +154,14 @@ struct UIKitTextField : UIViewRepresentable {
         
 }
 */
-
+/*
 struct CustomPickerTextField : UIViewRepresentable {
     private let textField = UITextField()
     private let picker = UIPickerView()
+    private let toolbar = UIToolbar()
     private let helper = Helper()
     
-    public var dataArrays : [[String]]
+    public var dataArrays : [String]
     public var placeholder: String = "입력하기"
     @Binding public var bindingString: String
 
@@ -169,11 +170,6 @@ struct CustomPickerTextField : UIViewRepresentable {
         public var onDoneButtonTapped: (() -> Void)?
         @objc func doneButtonTapped() {
             onDoneButtonTapped?()
-        }
-        
-        public var onClickCancelButton: (() -> Void)?
-        @objc func clickCancelButton() {
-            onClickCancelButton?()
         }
     }
 
@@ -191,16 +187,14 @@ struct CustomPickerTextField : UIViewRepresentable {
         picker.delegate = context.coordinator
         picker.selectRow(defaultIndex, inComponent: 0, animated: true)
         
-        textField.text = bindingString == "" ? "" : bindingString
+//        textField.text = bindingString == "" ? "" : bindingString
         textField.placeholder = placeholder
         textField.inputView = picker
         
         //툴바
-        let toolbar = UIToolbar()
         toolbar.sizeToFit()
         let flexibleSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: helper, action: #selector(helper.doneButtonTapped))
-
         toolbar.setItems([flexibleSpace, doneButton], animated: true)
         textField.inputAccessoryView = toolbar
         
@@ -224,17 +218,19 @@ struct CustomPickerTextField : UIViewRepresentable {
         
         //Number Of Components: 컴포넌트 개수 ( 열 )
         func numberOfComponents(in pickerView: UIPickerView) -> Int {
-            return parent.dataArrays.count
+//            return parent.dataArrays.count
+            return 1
         }
         
         //Number Of Rows In Component: 각 컴포넌트 별 행
         func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-            return parent.dataArrays[component].count
+            return parent.dataArrays.count
         }
 
-        //Width for component:
+        //Width for component: 각 컴포넌트의 width
         func pickerView(_ pickerView: UIPickerView, widthForComponent component: Int) -> CGFloat {
-            return UIScreen.main.bounds.width/3
+//            return UIScreen.main.bounds.width/3
+            return UIScreen.main.bounds.width
         }
 
         //Row height:
@@ -242,15 +238,11 @@ struct CustomPickerTextField : UIViewRepresentable {
             return 40
         }
 
-        //View for Row
+        //View for Row : 열이 생길 때마다 한번씩 호출??
         func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
-
             let view = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width/4, height: 60))
             let pickerLabel = UILabel(frame: view.bounds)
-            if(component == 0) {
-                pickerLabel.text = parent.dataArrays[component][row]
-            }
-
+            pickerLabel.text = parent.dataArrays[row]
             pickerLabel.adjustsFontSizeToFitWidth = true
             pickerLabel.textAlignment = .center
             pickerLabel.lineBreakMode = .byWordWrapping
@@ -262,8 +254,179 @@ struct CustomPickerTextField : UIViewRepresentable {
             return view
         }
         
+        //사용자가 picker에서 입력값 선택했을 때마다 호출 : bindingString값을 입력한 값으로 바인딩 시킨다
         func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-            parent.bindingString = parent.dataArrays[0][pickerView.selectedRow(inComponent: 0)]
+            parent.bindingString = parent.dataArrays[pickerView.selectedRow(inComponent: component)]
         }
+    }
+}
+ */
+
+
+/*
+struct CustomPickerTextField : UIViewRepresentable {
+    private let textField = UITextField()
+    private let picker = UIPickerView()
+    private let toolbar = UIToolbar()
+//    private let helper = Helper()
+    
+    public var dataArrays : [String]
+    public var placeholder: String = "입력하기"
+    @Binding public var bindingString: String
+
+    
+//    class Helper {
+//        public var onDoneButtonTapped: (() -> Void)?
+//        @objc func doneButtonTapped() {
+//            onDoneButtonTapped?()
+//        }
+//
+//        public var onClickCancelButton: (() -> Void)?
+//        @objc func clickCancelButton() {
+//            onClickCancelButton?()
+//        }
+//    }
+
+
+    //makeUIView(context:)
+    func makeUIView(context: UIViewRepresentableContext<CustomPickerTextField>) -> UITextField {
+//        let defaultIndex : Int = 0
+        
+        //날짜 피커
+//        picker.dataSource = context.coordinator
+//        picker.delegate = context.coordinator
+//        picker.selectRow(defaultIndex, inComponent: 0, animated: true)
+        
+//        textField.text = bindingString == "" ? "" : bindingString
+        textField.placeholder = placeholder
+        textField.inputView = picker
+        
+        //툴바
+        toolbar.sizeToFit()
+//        let flexibleSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+//        let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: helper, action: #selector(helper.doneButtonTapped))
+////
+//        toolbar.setItems([flexibleSpace, doneButton], animated: true)
+        textField.inputAccessoryView = toolbar
+//
+//        helper.onDoneButtonTapped = {
+//            textField.resignFirstResponder()
+//        }
+
+        return textField
+
+    }
+
+    func updateUIView(_ uiView: UITextField, context: UIViewRepresentableContext<CustomPickerTextField>) {
+        print("🌸🌸🌸🌸🌸🌸updateUIView---")
+//        uiView.text = bindingString
+    }
+
+}
+ 
+ */
+
+struct CustomPickerTextField : UIViewRepresentable {
+    private let textField = UITextField()
+    private let picker = UIPickerView()
+    private let toolbar = UIToolbar()
+    private let helper = Helper()
+    
+    public var dataArrays : [String]
+    public var placeholder: String = "입력하기"
+    @Binding public var bindingString: String
+
+    
+    class Helper {
+        public var onDoneButtonTapped: (() -> Void)?
+        @objc func doneButtonTapped() {
+            onDoneButtonTapped?()
+        }
+    }
+
+    //makeCoordinator()
+    func makeCoordinator() -> CustomPickerTextField.Coordinator {
+        CustomPickerTextField.Coordinator(self)
+    }
+
+    func makeUIView(context: UIViewRepresentableContext<CustomPickerTextField>) -> UITextField {
+        let defaultIndex : Int = 0
+        
+        picker.dataSource = context.coordinator
+        picker.delegate = context.coordinator
+        picker.selectRow(defaultIndex, inComponent: 0, animated: true)
+        
+        textField.placeholder = placeholder
+        textField.inputView = picker
+        
+                //툴바
+        toolbar.sizeToFit()
+        let flexibleSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: helper, action: #selector(helper.doneButtonTapped))
+        toolbar.setItems([flexibleSpace, doneButton], animated: true)
+        textField.inputAccessoryView = toolbar
+        
+        helper.onDoneButtonTapped = {
+            textField.resignFirstResponder()
+        }
+        
+
+        return textField
+
+    }
+
+    func updateUIView(_ uiView: UITextField, context: UIViewRepresentableContext<CustomPickerTextField>) {
+                //🌸 UITextField에 사용자가 입력한 값이 반영 될 수 있도록한다.
+                uiView.text = bindingString
+    }
+
+    class Coordinator: NSObject, UIPickerViewDataSource, UIPickerViewDelegate {
+        var parent: CustomPickerTextField
+        init(_ pickerView: CustomPickerTextField) {
+            self.parent = pickerView
+        }
+        
+        //Number Of Components
+        func numberOfComponents(in pickerView: UIPickerView) -> Int {
+            return 1
+        }
+        
+        //Number Of Rows In Component
+        func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+            return parent.dataArrays.count
+        }
+
+        //Width for component
+        func pickerView(_ pickerView: UIPickerView, widthForComponent component: Int) -> CGFloat {
+            return UIScreen.main.bounds.width
+        }
+
+        //Row height
+        func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
+            return 40
+        }
+
+        //View for Row
+        func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
+            let view = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width/4, height: 60))
+            let pickerLabel = UILabel(frame: view.bounds)
+            pickerLabel.text = parent.dataArrays[row]
+            pickerLabel.adjustsFontSizeToFitWidth = true
+            pickerLabel.textAlignment = .center
+            pickerLabel.lineBreakMode = .byWordWrapping
+            pickerLabel.numberOfLines = 0
+
+            view.addSubview(pickerLabel)
+            view.clipsToBounds = true
+
+            return view
+        }
+
+                //🌸 사용자가 picker에서 입력값 선택했을 때마다 호출
+                // bindingString값을 사용자가 입력한 값으로 바인딩 시킨다. (UIKit -> SwiftUI 방향으로의 데이터 전달)
+        func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+            parent.bindingString = parent.dataArrays[pickerView.selectedRow(inComponent: component)]
+        }
+        
     }
 }
