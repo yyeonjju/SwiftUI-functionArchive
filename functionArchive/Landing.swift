@@ -159,6 +159,9 @@ struct Landing: View {
                         NavigationLink(destination : UIVIewRepresentablePracticeView()){
                             Text("UIVIewRepresentablePracticeView")
                         }
+                        NavigationLink(destination : UIViewControllerRepresentablePracticeView()){
+                            Text("UIViewControllerRepresentablePracticeView")
+                        }
                     }
                    
                 }
