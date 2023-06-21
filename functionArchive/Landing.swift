@@ -162,6 +162,14 @@ struct Landing: View {
                         NavigationLink(destination : UIViewControllerRepresentablePracticeView()){
                             Text("UIViewControllerRepresentablePracticeView")
                         }
+                        
+                        NavigationLink(destination : StateObjectPracticeView()){
+                            Text("@StateObject")
+                        }
+                        
+                        NavigationLink(destination : ObservedObjectPracticeView()){
+                            Text("@ObservedObject")
+                        }
                     }
                    
                 }
