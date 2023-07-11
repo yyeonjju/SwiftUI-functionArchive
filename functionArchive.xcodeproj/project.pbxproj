@@ -33,6 +33,7 @@
 		7D54C887280E94BD0047B277 /* HorizontalList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D54C886280E94BD0047B277 /* HorizontalList.swift */; };
 		7D59F6BF2A416DCA00A602A6 /* StateObjectPracticeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D59F6BE2A416DCA00A602A6 /* StateObjectPracticeView.swift */; };
 		7D59F6C12A416DE200A602A6 /* ObservedObjectPracticeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D59F6C02A416DE200A602A6 /* ObservedObjectPracticeView.swift */; };
+		7D59F6C42A43289000A602A6 /* DragGesturePracticeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D59F6C32A43289000A602A6 /* DragGesturePracticeView.swift */; };
 		7D5E743928B35AB60014176B /* SwiftUIAppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5E743828B35AB60014176B /* SwiftUIAppState.swift */; };
 		7D602AC4283DADC700EF58EA /* AutoCompleteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D602AC3283DADC700EF58EA /* AutoCompleteView.swift */; };
 		7D6621A0286418C700F524DF /* WebViewPractice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D66219F286418C700F524DF /* WebViewPractice.swift */; };
@@ -101,6 +102,7 @@
 		7D54C886280E94BD0047B277 /* HorizontalList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalList.swift; sourceTree = "<group>"; };
 		7D59F6BE2A416DCA00A602A6 /* StateObjectPracticeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateObjectPracticeView.swift; sourceTree = "<group>"; };
 		7D59F6C02A416DE200A602A6 /* ObservedObjectPracticeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservedObjectPracticeView.swift; sourceTree = "<group>"; };
+		7D59F6C32A43289000A602A6 /* DragGesturePracticeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragGesturePracticeView.swift; sourceTree = "<group>"; };
 		7D5E743828B35AB60014176B /* SwiftUIAppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIAppState.swift; sourceTree = "<group>"; };
 		7D602AC3283DADC700EF58EA /* AutoCompleteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoCompleteView.swift; sourceTree = "<group>"; };
 		7D66219F286418C700F524DF /* WebViewPractice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewPractice.swift; sourceTree = "<group>"; };
@@ -286,6 +288,7 @@
 		7D4CB1EA27F67ED100A03269 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				7D59F6C22A43282D00A602A6 /* DragGesture */,
 				7D59F6BD2A416D7200A602A6 /* StateObjectAndObservedObject */,
 				7D88609E2A36FE47009DBDCE /* UIViewControllerRepresentable */,
 				7D8AB6B22A2DE3F200051A62 /* UIViewRepresentablePractice */,
@@ -363,6 +366,14 @@
 				7D59F6C02A416DE200A602A6 /* ObservedObjectPracticeView.swift */,
 			);
 			path = StateObjectAndObservedObject;
+			sourceTree = "<group>";
+		};
+		7D59F6C22A43282D00A602A6 /* DragGesture */ = {
+			isa = PBXGroup;
+			children = (
+				7D59F6C32A43289000A602A6 /* DragGesturePracticeView.swift */,
+			);
+			path = DragGesture;
 			sourceTree = "<group>";
 		};
 		7D602AC2283DADB100EF58EA /* AutoComplete */ = {
@@ -651,6 +662,7 @@
 				7D6A0ED927FD6CD500F3E87E /* MyScoreView.swift in Sources */,
 				7D489A882897BE0600FCA08C /* NavigateConditionView.swift in Sources */,
 				7D6A0EC427F9DF9E00F3E87E /* DropdownRowView.swift in Sources */,
+				7D59F6C42A43289000A602A6 /* DragGesturePracticeView.swift in Sources */,
 				7D54C887280E94BD0047B277 /* HorizontalList.swift in Sources */,
 				7D4CB1EC27F67F8900A03269 /* Landing.swift in Sources */,
 				7D996A1B28B08D55002962D3 /* sendbirdCallView.swift in Sources */,

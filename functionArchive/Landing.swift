@@ -167,9 +167,10 @@ struct Landing: View {
                             Text("@StateObject")
                         }
                         
-                        NavigationLink(destination : ObservedObjectPracticeView()){
-                            Text("@ObservedObject")
+                        NavigationLink(destination : DragGesturePracticeView()){
+                            Text("Drag Gesture")
                         }
+                        
                     }
                    
                 }
