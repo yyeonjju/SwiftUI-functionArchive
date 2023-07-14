@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7D246BD72A5D670200094BD2 /* PushNotificationPracticeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D246BD62A5D670200094BD2 /* PushNotificationPracticeView.swift */; };
 		7D255D392802930800EE2C1A /* SearchableListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D255D382802930700EE2C1A /* SearchableListView.swift */; };
 		7D255D3B2802989700EE2C1A /* CompanyNameFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D255D3A2802989700EE2C1A /* CompanyNameFetcher.swift */; };
 		7D255D3D280299BB00EE2C1A /* SearchableListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D255D3C280299BB00EE2C1A /* SearchableListViewModel.swift */; };
@@ -75,6 +76,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7D246BD62A5D670200094BD2 /* PushNotificationPracticeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotificationPracticeView.swift; sourceTree = "<group>"; };
 		7D255D382802930700EE2C1A /* SearchableListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchableListView.swift; sourceTree = "<group>"; };
 		7D255D3A2802989700EE2C1A /* CompanyNameFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyNameFetcher.swift; sourceTree = "<group>"; };
 		7D255D3C280299BB00EE2C1A /* SearchableListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchableListViewModel.swift; sourceTree = "<group>"; };
@@ -157,6 +159,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7D246BD52A5D66D100094BD2 /* PushNotification */ = {
+			isa = PBXGroup;
+			children = (
+				7D246BD62A5D670200094BD2 /* PushNotificationPracticeView.swift */,
+			);
+			path = PushNotification;
+			sourceTree = "<group>";
+		};
 		7D255D372802926900EE2C1A /* Searchable */ = {
 			isa = PBXGroup;
 			children = (
@@ -288,6 +298,7 @@
 		7D4CB1EA27F67ED100A03269 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				7D246BD52A5D66D100094BD2 /* PushNotification */,
 				7D59F6C22A43282D00A602A6 /* DragGesture */,
 				7D59F6BD2A416D7200A602A6 /* StateObjectAndObservedObject */,
 				7D88609E2A36FE47009DBDCE /* UIViewControllerRepresentable */,
@@ -691,6 +702,7 @@
 				7D8AB6B62A2F027100051A62 /* CustomPickerTextField.swift in Sources */,
 				7D467485282F2C140054C705 /* YearMonthPicker.swift in Sources */,
 				7D8AB6B42A2DE41F00051A62 /* UIVIewRepresentablePracticeView.swift in Sources */,
+				7D246BD72A5D670200094BD2 /* PushNotificationPracticeView.swift in Sources */,
 				7D6A0EC027F9C30800F3E87E /* DropdownSelectorView.swift in Sources */,
 				7D489A94289A18B500FCA08C /* DocumentPickerPractice.swift in Sources */,
 				7D4CB1F327F68C2500A03269 /* FilterViewModel.swift in Sources */,

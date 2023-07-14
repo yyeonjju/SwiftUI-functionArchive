@@ -171,6 +171,10 @@ struct Landing: View {
                             Text("Drag Gesture")
                         }
                         
+                        NavigationLink(destination : PushNotificationPracticeView()){
+                            Text("local notification")
+                        }
+                        
                     }
                    
                 }

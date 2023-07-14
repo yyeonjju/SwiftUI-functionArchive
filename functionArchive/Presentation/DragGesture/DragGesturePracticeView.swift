@@ -588,6 +588,7 @@ struct PlayerView: View {
 }
 
 
+
 struct DragGesturePracticeView: View {
     @State private var data: [Player] =  [
         Player(name: 0, isOn: false),
