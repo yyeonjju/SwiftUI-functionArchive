@@ -96,7 +96,7 @@ class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDele
         //UNUserNotificationCenter.current()로 객체를 반환받은 뒤 requestAuthorization 메서드를 활용
         //completionHandler에서는 사용자가 권한을 허락했는지에 대한 여부와 에러에 대한 정보에 대해 상황을 처리
         let center = UNUserNotificationCenter.current()
-        center.requestAuthorization(options: [.alert, .badge, .sound]) { success, error in
+        center.requestAuthorization(options: [.alert, .badge, .sound]) { success, error in //options: [.alert, .badge, .sound, .provisional]
             guard error == nil else {
                 print("🌸Error while requesting permission for notifications.")
                 return
