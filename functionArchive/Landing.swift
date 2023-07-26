@@ -9,6 +9,7 @@ import Foundation
 import SwiftUI
 
 struct Landing: View {
+//    @EnvironmentObject var notificationCenter : NotificationCenter
     
     var body: some View {
         NavigationView{
@@ -174,6 +175,18 @@ struct Landing: View {
                         NavigationLink(destination : PushNotificationPracticeView()){
                             Text("local notification")
                         }
+                        
+                        /*
+                        VStack{
+                            if let dumbData = notificationCenter.responseData  {
+                                Text("Old Notification Payload:")
+                                Text(dumbData.actionIdentifier)
+                                Text(dumbData.notification.request.content.body)
+                                Text(dumbData.notification.request.content.title)
+                                Text(dumbData.notification.request.content.subtitle)
+                            }
+                        }
+                         */
                         
                     }
                    

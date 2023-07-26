@@ -12,12 +12,15 @@ import Foundation
 @main
 struct functionArchiveApp: App {
     @UIApplicationDelegateAdaptor var delegate: AppDelegate
+    
     @StateObject private var appState = SwiftUIAppState()
+//    @StateObject var notificationCenter = NotificationCenter()
     
     var body: some Scene {
         WindowGroup {
             ContentView()
                 .environmentObject(appState)
+//                .environmentObject(notificationCenter)
         }
     }
     

@@ -4,80 +4,76 @@ import SwiftUI
 import SendBirdCalls
 import CallKit
 import PushKit
-
-//NSObject 타입으로 객체를 만들고 , UIApplicationDelegate프로토콜을 채택
-//class AppDelegate:  NSObject, UIApplicationDelegate {
-//
-//// UIApplicationDelegate가 제공하는 메서드 application()
-//  func application(
-//    _ application: UIApplication,
-//    //⭐️ 앱이 처음 실행된 뒤 실행
-//    didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil
-//  ) -> Bool {
-//      print("----")
-//    // ...
-//    return true
-//  }
-//
-//// MySceneDelegate 는 App에다가 직접 연결하는 것이 아닌 MyAppDelegate에 연결
-//  func application(
-//    _ application: UIApplication,
-//    //⭐️ Scene이 새로 생긴 뒤 실행
-//    configurationForConnecting connectingSceneSession: UISceneSession,
-//    options: UIScene.ConnectionOptions
-//  ) -> UISceneConfiguration {
-//      print("----")
-//    let sceneConfig = UISceneConfiguration(name: nil, sessionRole: connectingSceneSession.role)
-//    //sceneConfig.delegateClass를 MySceneDelegate로 설정해줌으로써 MySceneDelegate 도 활용할 수 있게됨
-//    sceneConfig.delegateClass = SceneDelegate.self
-//    return sceneConfig
-//  }
-//
-//  func application(
-//    _ application: UIApplication,
-//    //⭐️ Scene이 삭제된 뒤 실행
-//    didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {
-//
-//  }
-//
-//}
+//import FirebaseCore
+//import Firebase
+//import UserNotifications
 
 
+/*
+class NotificationCenter: NSObject, ObservableObject {
+    @Published var responseData: UNNotificationResponse?
+    
+    override init() {
+        super.init()
+        UNUserNotificationCenter.current().delegate = self
+    }
+}
+
+extension NotificationCenter: UNUserNotificationCenterDelegate  {
+    // 앱이 foreground상태 일 때, 알림이 온 경우 어떻게 표현할 것인지 처리
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        completionHandler([.list, .banner])
+    }
+
+    
+    // push를 탭한 경우 처리 (local notification 이든, remote notification 이든 푸쉬 알림 온 것을 탭했을 때 )
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        
+        responseData = response
+        
+
+        // deep link처리 시 아래 url값 가지고 처리
+        let url = response.notification.request.content.userInfo
+        print("🌸 알림 body ==> \(response.notification.request.content.body)")
+        print("🌸 알림 왔을 때 그 push 를 탭한 경우 ==> url = \(url)")
+        
+        
+        //https://fomaios.tistory.com/entry/iOS-%ED%91%B8%EC%89%AC-%EC%95%8C%EB%A6%BC-%ED%83%AD%ED%96%88%EC%9D%84-%EB%95%8C-%ED%8A%B9%EC%A0%95-%ED%8E%98%EC%9D%B4%EC%A7%80%EB%A1%9C-%EC%9D%B4%EB%8F%99%ED%95%98%EA%B8%B0
+        let application = UIApplication.shared
+        
+        //앱이 켜져있는 상태에서 푸쉬 알림을 눌렀을 때
+        if application.applicationState == .active {
+            print("푸쉬알림 탭(앱 켜져있음)")
+        }
+        
+        //앱이 꺼져있는 상태에서 푸쉬 알림을 눌렀을 때
+        if application.applicationState == .inactive {
+          print("푸쉬알림 탭(앱 꺼져있음)")
+        }
+        
+        
+//        NotificationCenter.default.post(name: Notification.Name("showPage"), object: nil, userInfo: ["index":1])
+        
+
+    }
+
+    func userNotificationCenter(_ center: UNUserNotificationCenter, openSettingsFor notification: UNNotification?) { }
+}
+ */
 
 
 
-class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDelegate {
+
+
+class AppDelegate: NSObject, UIApplicationDelegate {
     
     var queue: DispatchQueue = DispatchQueue(label: "com.sendbird.calls.quickstart.yeonju.appdelegate")
     var voipRegistry: PKPushRegistry?
     
-//    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
-//        remoteNotificationsRegistration(application)
-//        return true
-//    }
-    
-//    func remoteNotificationsRegistration(_ application: UIApplication) {
-//        application.registerForRemoteNotifications()
-//
-//        let center = UNUserNotificationCenter.current()
-//        center.requestAuthorization(options: [.alert, .badge, .sound]) { success, error in
-//            guard error == nil else {
-//                print("Error while requesting permission for notifications.")
-//                return
-//            }
-//
-//            // If success is true, the permission is given and notifications will be delivered.
-//        }
-//    }
-    
-    
-    // 앱이 실행 중 일때 처리하는 메서드
-    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-        completionHandler([.list, .banner])
-    }
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         remoteNotificationsRegistration(application)
+//        FirebaseApp.configure()
         UNUserNotificationCenter.current().delegate = self
         return true
     }
@@ -101,29 +97,37 @@ class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDele
                 print("🌸Error while requesting permission for notifications.")
                 return
             }
-            print("🌸Success while requesting permission for notifications.")
             
+            print("🌸Success while requesting permission for notifications.")
+            DispatchQueue.main.async {
+                //⭐️⭐️remote notificaiton⭐️⭐️ APNs에 디바이스 토큰 등록
+                UIApplication.shared.registerForRemoteNotifications()
+            }
             // If success is true, the permission is given and notifications will be delivered.
+            //        let notificationSettings = UIUserNotificationSettings(types: [UIUserNotificationType.alert, UIUserNotificationType.badge, UIUserNotificationType.sound], categories: nil)
+            //        UIApplication.shared.registerUserNotificationSettings(notificationSettings)
+            //        UIApplication.shared.registerForRemoteNotifications()
         }
-        
-        //        let notificationSettings = UIUserNotificationSettings(types: [UIUserNotificationType.alert, UIUserNotificationType.badge, UIUserNotificationType.sound], categories: nil)
-        //        UIApplication.shared.registerUserNotificationSettings(notificationSettings)
-        //        UIApplication.shared.registerForRemoteNotifications()
         
     }
     
-    
+    //⭐️⭐️remote notificaiton⭐️⭐️ 디바이스토큰이 APNs에 등록실패했을 때
     func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
         print("🌸🌸🌸🌸🌸🌸RemoteNotification fail register")
         print(error.localizedDescription)
     }
     
+    //⭐️⭐️remote notificaiton⭐️⭐️ 디바이스토큰이 APNs에 등록되었을 때
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         print("🌸🌸🌸🌸🌸🌸RemoteNotification did register -- deviceToken")
         print(deviceToken)
-        UserDefaults.standard.remotePushToken = deviceToken
-        SendBirdCall.registerRemotePush(token: deviceToken, completionHandler: nil)
+        let deviceTokenString = deviceToken.map { String(format: "%02x", $0) }.joined()
+        print(deviceTokenString)
+//        UserDefaults.standard.remotePushToken = deviceToken
+//        SendBirdCall.registerRemotePush(token: deviceToken, completionHandler: nil)
+        
     }
+    
     
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
         print("🌸🌸🌸🌸🌸🌸RemoteNotification did Receive Remote Notification")
@@ -131,7 +135,60 @@ class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDele
     }
 }
 
+/*
+//파이어베이스에서 오는 알림 테스트하기 위해
+//import Firebase 해야함
+extension AppDelegate: MessagingDelegate {
+    func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String?) {
 
+      let deviceToken:[String: String] = ["token": fcmToken ?? ""]
+        print("❤️❤️ Device token: ", deviceToken) // This token can be used for testing notifications on FCM
+    }
+}
+*/
+
+
+extension AppDelegate: UNUserNotificationCenterDelegate  {
+    // 앱이 foreground상태 일 때, 알림이 온 경우 어떻게 표현할 것인지 처리
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        completionHandler([.list, .banner])
+    }
+
+    
+    // push를 탭한 경우 처리 (local notification 이든, remote notification 이든 푸쉬 알림 온 것을 탭했을 때 )
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        
+
+        // deep link처리 시 아래 url값 가지고 처리
+        let url = response.notification.request.content.userInfo
+        print("🌸 알림 body ==> \(response.notification.request.content.body)")
+        print("🌸 알림 왔을 때 그 push 를 탭한 경우 ==> url = \(url)")
+        
+        
+        //https://fomaios.tistory.com/entry/iOS-%ED%91%B8%EC%89%AC-%EC%95%8C%EB%A6%BC-%ED%83%AD%ED%96%88%EC%9D%84-%EB%95%8C-%ED%8A%B9%EC%A0%95-%ED%8E%98%EC%9D%B4%EC%A7%80%EB%A1%9C-%EC%9D%B4%EB%8F%99%ED%95%98%EA%B8%B0
+        let application = UIApplication.shared
+        
+        //앱이 켜져있는 상태에서 푸쉬 알림을 눌렀을 때
+        if application.applicationState == .active {
+            print("푸쉬알림 탭(앱 켜져있음)")
+        }
+        
+        //앱이 꺼져있는 상태에서 푸쉬 알림을 눌렀을 때
+        if application.applicationState == .inactive {
+          print("푸쉬알림 탭(앱 꺼져있음)")
+        }
+        
+        
+//        NotificationCenter.default.post(name: Notification.Name("showPage"), object: nil, userInfo: ["index":1])
+        
+
+    }
+
+    func userNotificationCenter(_ center: UNUserNotificationCenter, openSettingsFor notification: UNNotification?) { }
+}
+
+
+/*
 extension AppDelegate: PKPushRegistryDelegate {
     
 
@@ -176,3 +233,4 @@ extension AppDelegate: PKPushRegistryDelegate {
         }
     }
 }
+ */
