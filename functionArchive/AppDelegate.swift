@@ -5,7 +5,7 @@ import SendBirdCalls
 import CallKit
 import PushKit
 //import FirebaseCore
-//import Firebase
+import Firebase
 //import UserNotifications
 
 
@@ -66,31 +66,27 @@ extension NotificationCenter: UNUserNotificationCenterDelegate  {
 
 
 class AppDelegate: NSObject, UIApplicationDelegate {
+    //🌈🌈 firebase cloud messaging🌈🌈
+    let gcmMessageIDKey = "gcm.message_id"
     
     var queue: DispatchQueue = DispatchQueue(label: "com.sendbird.calls.quickstart.yeonju.appdelegate")
     var voipRegistry: PKPushRegistry?
     
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+        //🌈🌈 firebase cloud messaging🌈🌈
+        FirebaseApp.configure()
+        //🌈🌈 firebase cloud messaging🌈🌈
+        Messaging.messaging().delegate = self //extension AppDelegate: MessagingDelegate {} 생성해주어야함
+        
         remoteNotificationsRegistration(application)
-//        FirebaseApp.configure()
         UNUserNotificationCenter.current().delegate = self
         return true
     }
     
     func remoteNotificationsRegistration(_ application: UIApplication) {
-        //https://developer.apple.com/documentation/uikit/uiapplication/1623078-registerforremotenotifications
-        // Apple 푸시 알림 서비스에 등록하는 프로세스
-        //이 등록이 성공하면 application(_:didRegisterForRemoteNotificationsWithDeviceToken:)
-        //등록에 실패하면 앱은 application(_:didFailToRegisterForRemoteNotificationsWithError:) 호출
-        //func unregisterForRemoteNotifications() => 등록된 원격 알람 취소
-        // var isRegisteredForRemoteNotifications: Bool => 현재 원격알람이 등록되어 있는지 확인
-//        application.registerForRemoteNotifications()
         
-        //앱의 원격 알림이 알람, 뱃지, 사운드 등의 작업을 수행하도록 하려면 requestAuthorization 활용하여 권한을 요청해야한다
-        //알림 설정 센터에서 알림에 관한 권한 요청을 보낸다
-        //UNUserNotificationCenter.current()로 객체를 반환받은 뒤 requestAuthorization 메서드를 활용
-        //completionHandler에서는 사용자가 권한을 허락했는지에 대한 여부와 에러에 대한 정보에 대해 상황을 처리
+        //사용자에게 알림 권한 요청
         let center = UNUserNotificationCenter.current()
         center.requestAuthorization(options: [.alert, .badge, .sound]) { success, error in //options: [.alert, .badge, .sound, .provisional]
             guard error == nil else {
@@ -103,12 +99,12 @@ class AppDelegate: NSObject, UIApplicationDelegate {
                 //⭐️⭐️remote notificaiton⭐️⭐️ APNs에 디바이스 토큰 등록
                 UIApplication.shared.registerForRemoteNotifications()
             }
-            // If success is true, the permission is given and notifications will be delivered.
-            //        let notificationSettings = UIUserNotificationSettings(types: [UIUserNotificationType.alert, UIUserNotificationType.badge, UIUserNotificationType.sound], categories: nil)
-            //        UIApplication.shared.registerUserNotificationSettings(notificationSettings)
-            //        UIApplication.shared.registerForRemoteNotifications()
         }
         
+        //아래도 알림 권한 요청하는 코드인데 이건 iOS 10 미만에서만 이렇게 쓰였으므로 의미 없음
+//        let notificationSettings = UIUserNotificationSettings(types: [UIUserNotificationType.alert, UIUserNotificationType.badge, UIUserNotificationType.sound], categories: nil)
+//        UIApplication.shared.registerUserNotificationSettings(notificationSettings)
+//
     }
     
     //⭐️⭐️remote notificaiton⭐️⭐️ 디바이스토큰이 APNs에 등록실패했을 때
@@ -132,20 +128,30 @@ class AppDelegate: NSObject, UIApplicationDelegate {
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
         print("🌸🌸🌸🌸🌸🌸RemoteNotification did Receive Remote Notification")
         SendBirdCall.application(application, didReceiveRemoteNotification: userInfo)
+        
+        //🌈🌈 firebase cloud messaging🌈🌈
+        if let messageID = userInfo[gcmMessageIDKey] {
+          print("Message ID: \(messageID)")
+        }
+
+        print("🌈🌈userInfo",userInfo)
+
+        completionHandler(UIBackgroundFetchResult.newData)
+        
     }
 }
 
-/*
-//파이어베이스에서 오는 알림 테스트하기 위해
+
+//🌈🌈 firebase cloud messaging🌈🌈
 //import Firebase 해야함
 extension AppDelegate: MessagingDelegate {
     func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String?) {
 
       let deviceToken:[String: String] = ["token": fcmToken ?? ""]
-        print("❤️❤️ Device token: ", deviceToken) // This token can be used for testing notifications on FCM
+        print("🌈🌈 Device token: ", deviceToken) // This token can be used for testing notifications on FCM
     }
 }
-*/
+
 
 
 extension AppDelegate: UNUserNotificationCenterDelegate  {
